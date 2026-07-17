@@ -1,0 +1,380 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { motion, Variants } from "framer-motion";
+import Section from "@/components/layout/Section";
+import Container from "@/components/layout/Container";
+import Heading from "@/components/typography/Heading";
+import Text from "@/components/typography/Text";
+import Badge from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import HeroDivider from "@/components/ui/HeroDivider";
+
+const projects = [
+  {
+    slug: "uzee-tech",
+    title: "UZEE TECH",
+    category: "Branding & Web Development",
+    cover: "/images/portfolio/covers/portfolio-uzee-tech-cover.png",
+    logo: "/images/portfolio/UZEE%20TECH/01%20Logo/logo-icon.png",
+    shortDescription: "Premium digital identity and custom website development for a next-gen technology provider.",
+    badges: ["Brand Strategy", "Logo Design", "Stationery", "Web Development"],
+    isFeatured: true,
+  },
+  {
+    slug: "qdx-express",
+    title: "QDX Express",
+    category: "Brand Identity & Logistics Design",
+    cover: "/images/portfolio/covers/portfolio-qdx-express-cover.png",
+    logo: "/images/portfolio/QDX%20Express/01%20Logo%20Design/Primary%20Logo.png",
+    shortDescription: "A complete branding system and visual strategy for a modern logistics company.",
+    badges: ["Brand Identity", "Vehicle Design"],
+    isFeatured: false,
+  },
+  {
+    slug: "ruhunu-spice-food",
+    title: "Ruhunu Spice & Food",
+    category: "Packaging & Brand Identity",
+    cover: "/images/portfolio/covers/portfolio-ruhunu-spice-cover.png",
+    logo: "/images/portfolio/Ruhunu%20Spice%20%26%20Food/01%20Logo%20Design/Ruhunu_Spice_Food_Logo.png",
+    shortDescription: "Authentic packaging designs and traditional brand identity for a premium spice manufacturer.",
+    badges: ["Label Design", "Packaging", "Logo Identity"],
+    isFeatured: false,
+  },
+  {
+    slug: "mobicare",
+    title: "Mobicare",
+    category: "Branding & UI/UX Design",
+    cover: "/images/portfolio/covers/portfolio-mobicare-cover.png",
+    logo: "/images/portfolio/Mobicare/01%20Logo%20Design/MOBICARE_Brand_Icon.png",
+    shortDescription: "Mobile repair service branding, social media assets, and UI/UX design concepts.",
+    badges: ["Logo Design", "Social Media", "UI/UX"],
+    isFeatured: false,
+  },
+  {
+    slug: "seya-beauty-studio",
+    title: "Seya Beauty Studio",
+    category: "Luxury Branding & UI/UX",
+    cover: "/images/portfolio/covers/portfolio-seya-beauty-cover.png",
+    logo: "/images/portfolio/Seya%20Beauty%20Studio/01%20Logo%20Design/Seya_Beauty_Studio_Logo_Light.png",
+    shortDescription: "A high-end salon branding system, social media identity, and booking experience design.",
+    badges: ["Brand Identity", "Luxury Logo", "Booking UI"],
+    isFeatured: false,
+  },
+  {
+    slug: "leo-villas",
+    title: "Leo Villas",
+    category: "Real Estate Branding & Identity",
+    cover: "/images/portfolio/covers/portfolio-leo-villas-cover.png",
+    logo: "/images/portfolio/Leo%20Villas/01%20Logo%20Design/Leo_Villas_Official_Logo.png",
+    shortDescription: "Premium branding, print stationery, and property presentation materials for luxury villas.",
+    badges: ["Real Estate Branding", "Print Stationery", "Brochure Layouts"],
+    isFeatured: false,
+  },
+];
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 18,
+    },
+  },
+};
+
+export default function PortfolioClient() {
+  const featuredProject = projects.find(p => p.isFeatured);
+  const otherProjects = projects.filter(p => !p.isFeatured);
+
+  return (
+    <main className="min-h-screen bg-transparent pt-28 pb-12 relative">
+      {/* Volumetric Lights */}
+      <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
+        <div className="absolute top-[15%] left-[5%] w-[380px] h-[380px] rounded-full bg-[#16C7FF]/4 blur-[110px]" />
+        <div className="absolute top-[50%] right-[10%] w-[420px] h-[420px] rounded-full bg-blue-500/3 blur-[120px]" />
+      </div>
+
+      {/* 1. Header Section */}
+      <Section className="pb-12 lg:pb-16 bg-transparent">
+        <Container>
+          <div className="flex flex-col items-center text-center gap-5 max-w-4xl mx-auto">
+            <Badge
+              variant="secondary"
+              className="px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF] backdrop-blur-md shadow-[0_0_15px_rgba(22,199,255,0.05)]"
+            >
+              Our Portfolio
+            </Badge>
+            <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white border-none pb-0 leading-tight">
+              Crafting Digital Experiences That Deliver Results
+            </Heading>
+            <Text className="text-white/60 text-base sm:text-lg max-w-2xl leading-relaxed">
+              Showcasing carefully crafted branding, websites, social media, UI/UX, and digital experiences built for real businesses.
+            </Text>
+          </div>
+        </Container>
+      </Section>
+
+      <HeroDivider />
+
+      {/* 2. Featured Project Showcase */}
+      {featuredProject && (
+        <Section className="py-0 mb-16 bg-transparent">
+          <Container>
+            <div className="flex flex-col gap-6">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#16C7FF]">
+                Featured Case Study
+              </span>
+              
+              <Link
+                href={`/portfolio/${featuredProject.slug}`}
+                className="group block focus-visible:outline-none"
+                aria-label={`View Featured Project: ${featuredProject.title}`}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#11161C]/55 shadow-2xl hover:border-[#16C7FF]/30 hover:shadow-[0_25px_50px_rgba(22,199,255,0.08),0_0_20px_rgba(22,199,255,0.02)] backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-1">
+                  
+                  {/* Left Column: Cover Image */}
+                  <div className="lg:col-span-7 relative w-full aspect-[16/10] lg:aspect-[4/3] overflow-hidden bg-neutral-900">
+                    <Image
+                      src={featuredProject.cover}
+                      alt={`${featuredProject.title} Cover Showcase`}
+                      fill
+                      className="object-cover opacity-90 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-neutral-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </div>
+
+                  {/* Right Column: Case study info */}
+                  <div className="lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col justify-between h-full gap-6">
+                    <div className="flex flex-col gap-4">
+                      {/* Logo and Name */}
+                      <div className="flex items-center gap-3">
+                        <div className="relative size-14 rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#E8E8E8] p-2.5 flex items-center justify-center shadow-[0_8px_20px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(22,199,255,0.22),0_8px_20px_rgba(0,0,0,0.04)] group-hover:border-[#16C7FF]/40">
+                          <Image
+                            src={featuredProject.logo}
+                            alt={`${featuredProject.title} Logo`}
+                            width={36}
+                            height={36}
+                            className="object-contain transition-all duration-300 ease-out group-hover:brightness-[1.04] group-hover:contrast-[1.04]"
+                          />
+                        </div>
+                        <span className="text-xl font-bold text-white group-hover:text-[#16C7FF] transition-colors duration-300">
+                          {featuredProject.title}
+                        </span>
+                      </div>
+
+                      {/* Project Header details */}
+                      <p className="text-xs font-semibold text-[#16C7FF] uppercase tracking-wider">
+                        {featuredProject.category}
+                      </p>
+
+                      <Heading level="h3" className="text-2xl sm:text-3xl font-extrabold text-white border-none pb-0 leading-tight">
+                        Modern Tech Platform Redesign
+                      </Heading>
+
+                      <Text className="text-sm text-white/60 leading-relaxed">
+                        {featuredProject.shortDescription}
+                      </Text>
+
+                      {/* Badges */}
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {featuredProject.badges.map((b, idx) => (
+                          <Badge
+                            key={idx}
+                            variant="secondary"
+                            className="px-3 py-1 rounded-full text-xs bg-[#11161C]/50 border border-white/10 text-white/70"
+                          >
+                            {b}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Button */}
+                    <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#16C7FF] group-hover:text-[#60D6FF] transition-colors duration-300">
+                      View Full Case Study
+                      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
+                        &rarr;
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </Link>
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* 3. Portfolio Grid Section */}
+      <Section className="pt-0 bg-transparent">
+        <Container>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
+          >
+            {otherProjects.map((project) => (
+              <motion.div
+                key={project.slug}
+                variants={cardVariants}
+                className="h-full"
+              >
+                <Link
+                  href={`/portfolio/${project.slug}`}
+                  className="group block h-full focus-visible:outline-none"
+                  aria-label={`View ${project.title} Case Study`}
+                >
+                  <div className="flex flex-col h-full rounded-[2rem] overflow-hidden border border-white/10 bg-[#11161C]/55 shadow-lg hover:border-[#16C7FF]/30 hover:shadow-[0_20px_40px_rgba(22,199,255,0.06)] backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-1.5">
+                    
+                    {/* Cover image wrapper */}
+                    <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
+                      <Image
+                        src={project.cover}
+                        alt={`${project.title} Cover Showcase`}
+                        fill
+                        className="object-cover opacity-90 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-neutral-950/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    </div>
+
+                    {/* Card Content details */}
+                    <div className="p-6 flex-grow flex flex-col justify-between gap-6">
+                      <div className="flex flex-col gap-4">
+                        {/* Logo, title and badges */}
+                        <div className="flex items-center gap-3">
+                          <div className="relative size-12 rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#E8E8E8] p-2 flex items-center justify-center shadow-[0_8px_20px_rgba(0,0,0,0.06)] shrink-0 transition-all duration-300 ease-out group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(22,199,255,0.22),0_8px_20px_rgba(0,0,0,0.04)] group-hover:border-[#16C7FF]/40">
+                            <Image
+                              src={project.logo}
+                              alt={`${project.title} Logo`}
+                              width={32}
+                              height={32}
+                              className="object-contain transition-all duration-300 ease-out group-hover:brightness-[1.04] group-hover:contrast-[1.04]"
+                            />
+                          </div>
+                          <span className="text-lg font-bold text-white mt-0.5 group-hover:text-[#16C7FF] transition-colors duration-300 truncate">
+                            {project.title}
+                          </span>
+                        </div>
+
+                        <div>
+                          <span className="text-[11px] font-bold uppercase tracking-wider text-[#16C7FF]">
+                            {project.category}
+                          </span>
+                          <p className="text-sm text-white/60 mt-2 leading-relaxed">
+                            {project.shortDescription}
+                          </p>
+                        </div>
+
+                        {/* Deliverable Badges */}
+                        <div className="flex flex-wrap gap-1.5 pt-1">
+                          {project.badges.map((badge, idx) => (
+                            <Badge
+                              key={idx}
+                              variant="secondary"
+                              className="px-2 py-0.5 rounded-full text-[10px] bg-[#11161C]/40 border border-white/10 text-white/70"
+                            >
+                              {badge}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* View Project button link */}
+                      <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#16C7FF] group-hover:text-[#60D6FF] transition-colors duration-300 mt-2">
+                        View Project
+                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                          &rarr;
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* 4. Portfolio Conversion CTA */}
+      <Section className="py-12 pb-20 bg-transparent">
+        <Container>
+          <div className="relative w-full rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#11161C]/55 backdrop-blur-md shadow-2xl p-10 sm:p-14 md:p-16 lg:p-20">
+            <div className="absolute inset-0 blueprint-grid opacity-[0.25] pointer-events-none" />
+            <div className="absolute -top-32 -left-32 w-80 h-80 rounded-full bg-[#16C7FF]/15 blur-[90px] pointer-events-none animate-pulse" style={{ animationDuration: "6s" }} />
+            <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full bg-[#16C7FF]/15 blur-[90px] pointer-events-none animate-pulse" style={{ animationDuration: "7s" }} />
+            
+            <div className="relative grid grid-cols-1 lg:grid-cols-12 items-center gap-10 sm:gap-14 lg:gap-16 z-10">
+              
+              {/* Left Column Text */}
+              <div className="lg:col-span-8 flex flex-col items-center lg:items-start text-center lg:text-left gap-5">
+                <Badge
+                  variant="secondary"
+                  className="px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF]"
+                >
+                  NEXT STEP
+                </Badge>
+                <Heading level="h2" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white border-none pb-0 leading-tight">
+                  Ready to Build Something Exceptional?
+                </Heading>
+                <Text className="max-w-xl text-white/70 text-base sm:text-lg leading-relaxed">
+                  Let&apos;s transform your ideas into a memorable digital experience.
+                </Text>
+              </div>
+
+              {/* Right Column CTA buttons */}
+              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-center justify-center lg:items-end gap-5 w-full">
+                <motion.div
+                  whileHover={{
+                    y: -2,
+                    scale: 1.02,
+                    boxShadow: "0 0 25px rgba(22, 199, 255, 0.4)",
+                  }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                  className="w-full sm:w-auto lg:w-full"
+                >
+                  <Link href="/contact" className="w-full block">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-gradient-to-r from-[#16C7FF] to-[#0096C7] text-[#050608] font-bold px-8 py-5 shadow-md transition-all duration-300 text-center cursor-pointer"
+                    >
+                      Start Your Project
+                    </Button>
+                  </Link>
+                </motion.div>
+                
+                <Link
+                  href="/contact"
+                  className="text-sm font-semibold text-white hover:text-[#16C7FF] transition-colors duration-300"
+                >
+                  Contact Us &rarr;
+                </Link>
+              </div>
+
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </main>
+  );
+}
