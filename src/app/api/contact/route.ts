@@ -1,11 +1,23 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(req: Request) {
   try {
     const { name, email, service, message } = await req.json();
+
+    if (!resend) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Email delivery is currently unavailable. Please contact us directly at brandhive.studio.lk@gmail.com.",
+        },
+        {
+          status: 503,
+        }
+      );
+    }
 
     const { error } = await resend.emails.send({
       from: "BrandHive Studio <onboarding@resend.dev>",
