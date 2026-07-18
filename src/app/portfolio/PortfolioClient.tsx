@@ -71,8 +71,113 @@ const projects = [
     shortDescription: "Premium branding, print stationery, and property presentation materials for luxury villas.",
     badges: ["Real Estate Branding", "Print Stationery", "Brochure Layouts"],
     isFeatured: false,
+  },  {
+    slug: "vista-travels-and-tours",
+    title: "Vista Travels and Tours",
+    category: "Travel Booking & Experience",
+    cover: "/images/portfolio/Vista%20Travels%20and%20Tours/02%20Website/home.png",
+    logo: "/images/portfolio/Vista%20Travels%20and%20Tours/01%20Logo/logo.png",
+    shortDescription: "Full-stack travel booking website offering comprehensive tour packages and booking management.",
+    badges: ["Travel Booking", "Full-Stack", "Node.js"],
+    isFeatured: false,
   },
-];
+  {
+    slug: "bethel-ceylon-tours",
+    title: "Bethel Ceylon Tours",
+    category: "Travel Management & Customer Experience",
+    cover: "/images/portfolio/Bethel%20Ceylon%20Tours/02%20Website/Home.png",
+    logo: "/images/portfolio/Bethel%20Ceylon%20Tours/01%20Logo/logo.png",
+    shortDescription: "Travel management website designed to streamline tour operations and customer inquiries.",
+    badges: ["Travel Management", "Web Operations", "Customer Experience"],
+    isFeatured: false,
+  },
+  {
+    slug: "hardware-store",
+    title: "Hardware Store",
+    category: "E-commerce Platform",
+    cover: "/images/portfolio/Hardware%20Store/02%20Website/login.png",
+    logo: "/images/portfolio/Hardware%20Store/01%20Logo/logo.png",
+    shortDescription: "Modern e-commerce platform for hardware supplies with dynamic product catalog.",
+    badges: ["E-commerce", "Catalog", "Shopping"],
+    isFeatured: false,
+  },
+  {
+    slug: "hotel-management-system",
+    title: "Hotel Management System",
+    category: "Hospitality & Booking System",
+    cover: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    logo: "/images/portfolio/hero/floating-glass-portfolio-cards.webp",
+    shortDescription: "Web-based platform for managing hotel reservations, rooms, and guest services efficiently.",
+    badges: ["Reservations", "Guest Services", "Web System"],
+    isFeatured: false,
+    isOngoing: true,
+  },
+  {
+    slug: "hr-automation-system",
+    title: "HR Automation System",
+    category: "Desktop HR Automation",
+    cover: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
+    logo: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    shortDescription: "Desktop application for automating HR workflows, employee records, and administrative tasks.",
+    badges: ["Automation", "Employee Management", "Desktop App"],
+    isFeatured: false,
+    isOngoing: true,
+  },
+  {
+    slug: "thanking-notes-app",
+    title: "Thanking Notes App",
+    category: "Employee Communication",
+    cover: "/images/portfolio/covers/portfolio-thanking-notes-app-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-thanking-notes-app-logo.svg",
+    shortDescription: "Internal communication desktop system for employees to share appreciation and notes.",
+    badges: ["Communication", "Productivity", "Desktop"],
+    isFeatured: false,
+    isOngoing: true,
+  },
+  {
+    slug: "caravan-fresh-cafeteria",
+    title: "Caravan Fresh Cafeteria",
+    category: "Cafeteria Management Dashboard",
+    cover: "/images/portfolio/covers/portfolio-caravan-fresh-cafeteria-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-caravan-fresh-cafeteria-logo.svg",
+    shortDescription: "Comprehensive cafeteria management system with order processing, menu management, and authentication.",
+    badges: ["MERN Stack", "Dashboard", "Order Management"],
+    isFeatured: false,
+    isOngoing: true,
+  },
+  {
+    slug: "payment-management-system",
+    title: "Payment Management System",
+    category: "Secure Transaction Platform",
+    cover: "/images/portfolio/covers/portfolio-payment-management-system-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-payment-management-system-logo.svg",
+    shortDescription: "Secure transaction management system built with strong Object-Oriented Programming principles.",
+    badges: ["OOP", "Security", "Payments"],
+    isFeatured: false,
+    isOngoing: true,
+  },
+  {
+    slug: "mathi-quiz-game",
+    title: "Mathi Quiz Game",
+    category: "Mobile Quiz & Gamification",
+    cover: "/images/portfolio/covers/portfolio-mathi-quiz-game-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-mathi-quiz-game-logo.svg",
+    shortDescription: "Engaging mobile quiz application featuring timed challenges and dynamic scoring systems.",
+    badges: ["Mobile", "Game", "Quizzes"],
+    isFeatured: false,
+    isOngoing: true,
+  },
+  {
+    slug: "blossom-task",
+    title: "Blossom Task",
+    category: "Task Management & Productivity",
+    cover: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    logo: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
+    shortDescription: "Task management application supporting full CRUD operations and deadline tracking.",
+    badges: ["CRUD", "Productivity", "Task Tracking"],
+    isFeatured: false,
+    isOngoing: true,
+  },];
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -284,6 +389,15 @@ export default function PortfolioClient() {
                             {project.shortDescription}
                           </p>
                         </div>
+
+                        {project.isOngoing && (
+                          <Badge
+                            variant="secondary"
+                            className="w-fit px-2.5 py-1 rounded-full text-[10px] bg-[#16C7FF]/10 border border-[#16C7FF]/20 text-[#16C7FF]"
+                          >
+                            Ongoing Project
+                          </Badge>
+                        )}
 
                         {/* Deliverable Badges */}
                         <div className="flex flex-wrap gap-1.5 pt-1">

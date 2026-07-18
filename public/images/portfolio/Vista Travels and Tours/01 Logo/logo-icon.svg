@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#g1)"/>
+  <circle cx="60" cy="52" r="22" fill="rgba(255,255,255,0.18)" stroke="#38BDF8" stroke-width="4"/>
+  <path d="M38 60c8-8 16-12 22-12s14 4 22 12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 32v8M60 72v8M40 52h8M72 52h8" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <text x="60" y="110" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">VTT</text>
+</svg>

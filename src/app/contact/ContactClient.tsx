@@ -42,17 +42,43 @@ export default function ContactClient() {
     return valid;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    setIsSubmitting(true);
-    // Simulate API request delay
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setIsSubmitting(false);
+  if (!validateForm()) return;
+
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message);
+    }
+
     setIsSubmitted(true);
-  };
 
+    setFormData({
+      name: "",
+      email: "",
+      service: "Brand Identity",
+      message: "",
+    });
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send inquiry. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const containerVariants = {
     hidden: {},
     visible: {

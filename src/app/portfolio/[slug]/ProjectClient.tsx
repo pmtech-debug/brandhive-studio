@@ -25,6 +25,7 @@ interface Project {
   role: string;
   year: string;
   deliverables: string[];
+  isOngoing?: boolean;
 }
 
 interface SectionData {
@@ -130,12 +131,22 @@ export default function ProjectClient({ project, sections, prevProject, nextProj
 
             {/* Title & Short Summary */}
             <div className="flex flex-col gap-5 max-w-4xl">
-              <Badge
-                variant="secondary"
-                className="w-fit px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF] backdrop-blur-md"
-              >
-                {project.category}
-              </Badge>
+              <div className="flex flex-wrap items-center gap-3">
+                <Badge
+                  variant="secondary"
+                  className="w-fit px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF] backdrop-blur-md"
+                >
+                  {project.category}
+                </Badge>
+                {project.isOngoing && (
+                  <Badge
+                    variant="secondary"
+                    className="w-fit px-3.5 py-1.5 text-xs font-semibold rounded-full border border-[#16C7FF]/20 bg-[#16C7FF]/10 text-[#16C7FF] backdrop-blur-md"
+                  >
+                    Ongoing Project
+                  </Badge>
+                )}
+              </div>
               <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white border-none pb-0 leading-tight">
                 {project.title}
               </Heading>

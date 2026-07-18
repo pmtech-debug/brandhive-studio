@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#g4)"/>
+  <path d="M34 88V44h52v44" fill="rgba(255,255,255,0.12)"/>
+  <path d="M42 56h12M42 68h12M42 80h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M78 56h12M78 68h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M70 44v-8h-20v8" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <text x="60" y="110" fill="#fff" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">HMS</text>
+</svg>

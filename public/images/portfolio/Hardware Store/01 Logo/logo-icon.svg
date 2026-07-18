@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#FBBF24"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#g3)"/>
+  <path d="M36 44h48l10 52H26L36 44Z" fill="rgba(255,255,255,0.16)"/>
+  <path d="M48 40h24v12H48z" fill="#fff" opacity="0.9"/>
+  <path d="M56 64h8v20h-8z" fill="#fff"/>
+  <path d="M40 60h40" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <text x="60" y="110" fill="#111827" font-family="Inter, sans-serif" font-size="16" font-weight="800" text-anchor="middle">HW</text>
+</svg>

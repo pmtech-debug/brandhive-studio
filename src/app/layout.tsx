@@ -11,6 +11,7 @@ import PageTransitionProvider from "@/components/providers/PageTransitionProvide
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import ClientSetupProvider from "@/components/providers/ClientSetupProvider";
+import FloatingChatbot from "@/components/ui/FloatingChatbot";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans', display: "swap"});
 
@@ -84,6 +85,7 @@ export default function RootLayout({
               {children}
             </PageTransitionProvider>
             <Footer />
+            <FloatingChatbot />
           </ClientSetupProvider>
         </ScrollProvider>
       </body>

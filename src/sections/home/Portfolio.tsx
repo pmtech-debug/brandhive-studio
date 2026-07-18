@@ -84,6 +84,133 @@ const projects = [
     services: "Branding, Print",
     year: "2025",
   },
+  {
+    title: "Vista Travels and Tours",
+    category: "Travel Booking Platform",
+    image: "/images/portfolio/Vista%20Travels%20and%20Tours/02%20Website/home.png",
+    logo: "/images/portfolio/Vista%20Travels%20and%20Tours/01%20Logo/logo.png",
+    description: "Full-stack travel booking website offering comprehensive tour packages and booking management.",
+    href: "/portfolio/vista-travels-and-tours",
+    client: "Vista Travels",
+    industry: "Travel",
+    services: "Web Development, Booking",
+    year: "2026",
+  },
+  {
+    title: "Bethel Ceylon Tours",
+    category: "Travel Management",
+    image: "/images/portfolio/Bethel%20Ceylon%20Tours/02%20Website/Home.png",
+    logo: "/images/portfolio/Bethel%20Ceylon%20Tours/01%20Logo/logo.png",
+    description: "Travel management website designed to streamline tour operations and customer inquiries.",
+    href: "/portfolio/bethel-ceylon-tours",
+    client: "Bethel Ceylon Tours",
+    industry: "Travel",
+    services: "Booking, Management",
+    year: "2026",
+  },
+  {
+    title: "Hardware Store",
+    category: "E-commerce",
+    image: "/images/portfolio/Hardware%20Store/02%20Website/login.png",
+    logo: "/images/portfolio/Hardware%20Store/01%20Logo/logo.png",
+    description: "Modern e-commerce platform for hardware supplies with dynamic product catalog.",
+    href: "/portfolio/hardware-store",
+    client: "Hardware Store",
+    industry: "Retail",
+    services: "E-commerce, Catalog",
+    year: "2026",
+  },
+  {
+    title: "Hotel Management System",
+    category: "Hospitality",
+    image: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    logo: "/images/portfolio/hero/floating-glass-portfolio-cards.webp",
+    description: "Web-based platform for managing hotel reservations, rooms, and guest services efficiently.",
+    href: "/portfolio/hotel-management-system",
+    client: "Hotel Management",
+    industry: "Hospitality",
+    services: "Reservations, Dashboard",
+    year: "2026",
+    isOngoing: true,
+  },
+  {
+    title: "HR Automation System",
+    category: "Desktop Productivity",
+    image: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
+    logo: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    description: "Desktop application for automating HR workflows, employee records, and administrative tasks.",
+    href: "/portfolio/hr-automation-system",
+    client: "HR Automation",
+    industry: "Human Resources",
+    services: "Automation, Records",
+    year: "2026",
+    isOngoing: true,
+  },
+  {
+    title: "Thanking Notes App",
+    category: "Employee Communication",
+    image: "/images/portfolio/covers/portfolio-thanking-notes-app-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-thanking-notes-app-logo.svg",
+    description: "Internal communication desktop system for employees to share appreciation and notes.",
+    href: "/portfolio/thanking-notes-app",
+    client: "Thanking Notes",
+    industry: "Corporate Wellness",
+    services: "Communication, Recognition",
+    year: "2026",
+    isOngoing: true,
+  },
+  {
+    title: "Caravan Fresh Cafeteria",
+    category: "Cafeteria Operations",
+    image: "/images/portfolio/covers/portfolio-caravan-fresh-cafeteria-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-caravan-fresh-cafeteria-logo.svg",
+    description: "Comprehensive cafeteria management system with order processing, menu management, and authentication.",
+    href: "/portfolio/caravan-fresh-cafeteria",
+    client: "Caravan Fresh",
+    industry: "Food Service",
+    services: "Management, Orders",
+    year: "2026",
+    isOngoing: true,
+  },
+  {
+    title: "Payment Management System",
+    category: "Secure Fintech",
+    image: "/images/portfolio/covers/portfolio-payment-management-system-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-payment-management-system-logo.svg",
+    description: "Secure transaction management system built with strong Object-Oriented Programming principles.",
+    href: "/portfolio/payment-management-system",
+    client: "Payment Management",
+    industry: "Fintech",
+    services: "Security, Transactions",
+    year: "2026",
+    isOngoing: true,
+  },
+  {
+    title: "Mathi Quiz Game",
+    category: "Mobile Learning",
+    image: "/images/portfolio/covers/portfolio-mathi-quiz-game-cover.svg",
+    logo: "/images/portfolio/logos/portfolio-mathi-quiz-game-logo.svg",
+    description: "Engaging mobile quiz application featuring timed challenges and dynamic scoring systems.",
+    href: "/portfolio/mathi-quiz-game",
+    client: "Mathi Games",
+    industry: "Mobile Apps",
+    services: "Game Design, UX",
+    year: "2026",
+    isOngoing: true,
+  },
+  {
+    title: "Blossom Task",
+    category: "Productivity Software",
+    image: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    logo: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
+    description: "Task management application supporting full CRUD operations and deadline tracking.",
+    href: "/portfolio/blossom-task",
+    client: "Blossom Task",
+    industry: "Productivity",
+    services: "Task Management, Tracking",
+    year: "2026",
+    isOngoing: true,
+  },
 ];
 
 const containerVariants: Variants = staggerContainer(0.12);
@@ -237,9 +364,19 @@ export default function Portfolio() {
                           {project.category}
                         </span>
                       </div>
-                      <CardTitle className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#16C7FF]">
-                        {project.title}
-                      </CardTitle>
+                      <div className="flex flex-col gap-2">
+                        <CardTitle className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#16C7FF]">
+                          {project.title}
+                        </CardTitle>
+                        {project.isOngoing && (
+                          <Badge
+                            variant="secondary"
+                            className="w-fit px-2.5 py-1 rounded-full text-[10px] bg-[#16C7FF]/10 border border-[#16C7FF]/20 text-[#16C7FF]"
+                          >
+                            Ongoing Project
+                          </Badge>
+                        )}
+                      </div>
                     </CardHeader>
                     
                     {/* Card Content */}

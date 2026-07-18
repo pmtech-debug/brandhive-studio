@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#0f4f8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#a)"/>
+  <circle cx="320" cy="250" r="120" fill="#38bdf8" opacity="0.22"/>
+  <circle cx="320" cy="250" r="60" fill="#ffffff" opacity="0.18"/>
+  <path d="M180 580c130-140 320-120 460-22 96 70 182 108 280 90" fill="none" stroke="#a5f3fc" stroke-width="26" stroke-linecap="round" opacity="0.7"/>
+  <path d="M220 380c120-60 240-70 320-18" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" opacity="0.85"/>
+  <polygon points="900,220 980,420 780,420" fill="#ffffff" opacity="0.08"/>
+  <text x="120" y="120" fill="#fff" font-family="Inter, sans-serif" font-size="64" font-weight="800">Travel Booking</text>
+  <text x="120" y="200" fill="#c7f2ff" font-family="Inter, sans-serif" font-size="32">Tour packages, booking management, reservations</text>
+</svg>
