@@ -16,12 +16,13 @@ export default function CinematicBackground() {
 
   useEffect(() => {
     const types: ("dot" | "pixel" | "node")[] = ["dot", "pixel", "node"];
-    const generated: Particle[] = Array.from({ length: 18 }).map((_, i) => ({
+    const max = typeof window !== "undefined" && window.innerWidth < 768 ? 8 : 18;
+    const generated: Particle[] = Array.from({ length: max }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 3 + 1.5,
-      duration: Math.random() * 18 + 18,
-      delay: Math.random() * -28,
+      size: Math.random() * 3 + 1.2,
+      duration: Math.random() * 14 + 12,
+      delay: Math.random() * -20,
       type: types[i % 3],
     }));
     setParticles(generated);
