@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Editor settings (machine-specific)
 .vscode/
+
+.vercel
+.env*

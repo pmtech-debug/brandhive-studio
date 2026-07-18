@@ -4,14 +4,12 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import CinematicBackground from "@/components/backgrounds/CinematicBackground";
-import Cursor from "@/components/ui/Cursor";
-import ScrollProvider from "@/components/providers/ScrollProvider";
-import PageTransitionProvider from "@/components/providers/PageTransitionProvider";
-import ScrollProgress from "@/components/ui/ScrollProgress";
 import LoadingScreen from "@/components/ui/LoadingScreen";
-import ClientSetupProvider from "@/components/providers/ClientSetupProvider";
-import FloatingChatbot from "@/components/ui/FloatingChatbot";
+import dynamic from "next/dynamic";
+
+const ClientOverlays = dynamic(() => import("@/components/providers/ClientOverlays"), {
+  loading: () => null,
+});
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans', display: "swap"});
 
@@ -73,21 +71,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-[#F5F7FA] bg-[#050608] selection:bg-[#16C7FF]/20 selection:text-[#16C7FF]`}
       >
-        <ScrollProvider>
-          <ClientSetupProvider>
-            <LoadingScreen />
-            <ScrollProgress />
-            <div className="fixed inset-0 pointer-events-none z-[9999] grain-overlay" />
-            <Cursor />
-            <CinematicBackground />
-            <Header />
-            <PageTransitionProvider>
-              {children}
-            </PageTransitionProvider>
-            <Footer />
-            <FloatingChatbot />
-          </ClientSetupProvider>
-        </ScrollProvider>
+        <LoadingScreen />
+        <Header />
+        <ClientOverlays>
+          {children}
+        </ClientOverlays>
+        <Footer />
       </body>
     </html>
   );
