@@ -68,6 +68,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans dark", inter.variable)} style={{ colorScheme: "dark" }}>
+      <head>
+        <link rel="preload" as="image" href="/images/hero/devices/hero-laptop-website-presentation.webp" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-[#F5F7FA] bg-[#050608] selection:bg-[#16C7FF]/20 selection:text-[#16C7FF]`}
       >

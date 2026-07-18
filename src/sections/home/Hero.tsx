@@ -403,12 +403,13 @@ export default function Hero() {
                 }}
               />
               <Image
-                src="/images/hero/devices/hero-macbook-homepage.png"
+                src="/images/hero/devices/hero-laptop-website-presentation.webp"
                 alt="BrandHive Agency MacBook presentation mockup"
                 fill
                 className="object-contain"
                 sizes="(max-width: 1024px) 480px, 420px"
                 priority
+                quality={75}
               />
             </motion.div>
 
