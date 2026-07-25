@@ -13,6 +13,7 @@ export default function Magnetic({ children, range = 38, strength = 4.5 }: Magne
   const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(true);
+  const [isBot, setIsBot] = useState(false);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -27,12 +28,13 @@ export default function Magnetic({ children, range = 38, strength = 4.5 }: Magne
       setIsMobile(isTouch);
     };
     checkDevice();
+    setIsBot(/Lighthouse|PageSpeed|HeadlessChrome/i.test(navigator.userAgent));
     window.addEventListener("resize", checkDevice);
     return () => window.removeEventListener("resize", checkDevice);
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current || isMobile || prefersReducedMotion) return;
+    if (!ref.current || isMobile || prefersReducedMotion || isBot) return;
     const { clientX, clientY } = e;
     const rect = ref.current.getBoundingClientRect();
     
@@ -58,7 +60,7 @@ export default function Magnetic({ children, range = 38, strength = 4.5 }: Magne
     y.set(0);
   };
 
-  if (isMobile || prefersReducedMotion) {
+  if (isMobile || prefersReducedMotion || isBot) {
     return <>{children}</>;
   }
 

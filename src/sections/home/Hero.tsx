@@ -373,7 +373,7 @@ export default function Hero() {
             
             {/* 1. MacBook Laptop Mockup */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 1, scale: 0.9, y: 20 }}
               animate={{
                 opacity: 1,
                 scale: 1,
@@ -381,10 +381,10 @@ export default function Hero() {
                 rotate: [0, 0, -0.5, 0.5, -0.5],
               }}
               transition={{
-                opacity: { duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] },
-                scale: { duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] },
-                y: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 },
-                rotate: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1 },
+                opacity: { duration: 0.3 },
+                scale: { duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] },
+                y: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 0.7 },
+                rotate: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 0.7 },
               }}
               style={{
                 rotateX: coords.rx * 0.7,
@@ -415,7 +415,7 @@ export default function Hero() {
 
             {/* 2. iPhone Phone Mockup (bottom-right overlap) */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.88, y: 16 }}
+              initial={{ opacity: 1, scale: 0.88, y: 16 }}
               animate={{
                 opacity: 1,
                 scale: 1,
@@ -423,10 +423,10 @@ export default function Hero() {
                 rotate: [-1.2, 1.2, -1.2],
               }}
               transition={{
-                opacity: { duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] },
-                scale: { duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] },
-                y: { duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
-                rotate: { duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
+                opacity: { duration: 0.3 },
+                scale: { duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] },
+                y: { duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
+                rotate: { duration: 12, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
               }}
               style={{
                 rotateX: coords.rx * 1.2,

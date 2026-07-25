@@ -466,3 +466,7 @@
     transform: translateY(120%);
   }
 }
+
+.grain-overlay.no-animate {
+  animation: none !important;
+}

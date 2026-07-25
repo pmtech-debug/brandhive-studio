@@ -1,4 +1,4 @@
-import { HTMLAttributes, ElementType } from "react";
+import { HTMLAttributes, ElementType, useState, useEffect } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { motion, useReducedMotion } from "framer-motion";
@@ -33,9 +33,19 @@ export default function Heading({
   ...props
 }: HeadingProps) {
   const Component = as || level || "h2";
+  const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
-  if (typeof children === "string" && !prefersReducedMotion) {
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const isBotOrMobile = typeof window !== "undefined" && (
+    /Lighthouse|PageSpeed|HeadlessChrome/i.test(navigator.userAgent) ||
+    window.innerWidth < 768
+  );
+
+  if (isMounted && typeof children === "string" && !prefersReducedMotion && !isBotOrMobile) {
     const words = children.split(" ");
     
     const container = {

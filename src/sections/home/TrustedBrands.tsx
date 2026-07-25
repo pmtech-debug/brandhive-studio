@@ -15,19 +15,19 @@ const brands = [
   },
   {
     name: "Leo Villas",
-    logo: "/images/portfolio/Leo Villas/01 Logo Design/Leo_Villas_Official_Logo.png",
+    logo: "/images/portfolio/Leo%20Villas/01%20Logo%20Design/Leo_Villas_Official_Logo.png",
   },
   {
     name: "Seya Beauty Studio",
-    logo: "/images/portfolio/Seya Beauty Studio/01 Logo Design/Seya_Beauty_Studio_Logo_Light.png",
+    logo: "/images/portfolio/Seya%20Beauty%20Studio/01%20Logo%20Design/Seya_Beauty_Studio_Logo_Light.png",
   },
   {
     name: "Ruhunu Spice & Food",
-    logo: "/images/portfolio/Ruhunu Spice & Food/01 Logo Design/Ruhunu_Spice_Food_Logo.png",
+    logo: "/images/portfolio/Ruhunu%20Spice%20%26%20Food/01%20Logo%20Design/Ruhunu_Spice_Food_Logo.png",
   },
   {
     name: "Mobicare",
-    logo: "/images/portfolio/Mobicare/01 Logo Design/MOBICARE_Brand_Icon.png",
+    logo: "/images/portfolio/Mobicare/01%20Logo%20Design/MOBICARE_Brand_Icon.png",
   },
 ];
 
