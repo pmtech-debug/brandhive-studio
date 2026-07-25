@@ -10,12 +10,12 @@ import Magnetic from "@/components/ui/Magnetic";
 
 const footerLinks = {
   services: [
+    { name: "Brand Strategy", href: "/services" },
     { name: "Brand Identity", href: "/services" },
-    { name: "Logo Design", href: "/services" },
     { name: "Website Design", href: "/services" },
     { name: "UI/UX Design", href: "/services" },
-    { name: "Digital Marketing", href: "/services" },
-    { name: "Social Media Marketing", href: "/services" },
+    { name: "Growth Marketing", href: "/services" },
+    { name: "Software Development", href: "/services" },
   ],
   company: [
     { name: "Home", href: "/" },
@@ -87,10 +87,12 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-[950px] mx-auto text-center md:text-left">
               <div className="flex flex-col gap-3 max-w-xl">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                  Ready to Build Something Incredible?
+                  {pathname === "/services" ? "Let's Build Something Incredible." : "Ready to Build Something Incredible?"}
                 </h3>
                 <p className="text-sm sm:text-base text-white/60 leading-relaxed font-normal">
-                  Let&apos;s collaborate to craft a brand identity and website that defines your industry.
+                  {pathname === "/services" 
+                    ? "Partner with BrandHive Studio to create impactful brands, premium digital experiences, and intelligent technology solutions that move ideas forward."
+                    : "Let's collaborate to craft a brand identity and website that defines your industry."}
                 </p>
               </div>
               
@@ -160,10 +162,10 @@ export default function Footer() {
                   <Image
                     src="/favicon/brandhive-studio-footer.png"
                     alt="BrandHive Studio Logo"
-                    width={396}
-                    height={396}
+                    width={200}
+                    height={200}
                     className="object-contain rounded-xl"
-                    priority
+                    loading="lazy"
                   />
                   
                   {/* Subtle rising pixel particles */}
@@ -202,12 +204,12 @@ export default function Footer() {
                 </motion.div>
               </Link>
               
-              <Text className="text-sm font-bold text-white tracking-wide mt-[16px]">
+              <Text className="text-sm font-bold text-white tracking-wide mt-3">
                 Building Brands That Get Noticed.
               </Text>
               
               <Text className="max-w-[280px] text-xs text-neutral-400/85 leading-[1.65] mt-1.5">
-                Creative branding and digital marketing for businesses that want to grow.
+                Building premium brands, digital products, and intelligent business solutions that help companies grow with confidence.
               </Text>
 
               {/* Social Icons */}
@@ -294,17 +296,17 @@ export default function Footer() {
                     brandhive.studio.lk@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center gap-2 pt-0.5">
-                  <svg className="size-3.5 text-[#25D366] shrink-0 fill-current" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.731-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.59 2.019 14.12 1.012 11.5 1.012c-5.443 0-9.867 4.371-9.871 9.8-.002 2.024.528 4.004 1.536 5.75L2.148 20.89l4.499-1.736z" />
-                  </svg>
+                <li className="pt-0.5">
                   <a
                     href="https://wa.me/94706410093"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#16C7FF] hover:text-[#00AEFF] transition-colors font-semibold flex items-center gap-1"
+                    className="group/wa flex items-center gap-2"
                   >
-                    WhatsApp Chat &rarr;
+                    <svg className="size-3.5 text-[#16C7FF] group-hover/wa:text-[#25D366] shrink-0 fill-current transition-colors duration-300" viewBox="0 0 24 24">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.731-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.59 2.019 14.12 1.012 11.5 1.012c-5.443 0-9.867 4.371-9.871 9.8-.002 2.024.528 4.004 1.536 5.75L2.148 20.89l4.499-1.736z" />
+                    </svg>
+                    <span className="font-semibold text-white">WhatsApp</span>
                   </a>
                 </li>
               </ul>
@@ -336,16 +338,17 @@ export default function Footer() {
                 <Image
                   src="/favicon/brandhive-studio-footer.png"
                   alt="BrandHive Studio Logo"
-                  width={310}
-                  height={310}
+                  width={200}
+                  height={200}
                   className="object-contain rounded-xl"
+                  loading="lazy"
                 />
               </Link>
-              <Text className="text-sm font-bold text-white tracking-wide mt-[16px]">
+              <Text className="text-sm font-bold text-white tracking-wide mt-3">
                 Building Brands That Get Noticed.
               </Text>
               <Text className="text-xs text-neutral-400/85 leading-[1.65] mt-1.5 max-w-sm">
-                Creative branding and digital marketing for businesses that want to grow.
+                Building premium brands, digital products, and intelligent business solutions that help companies grow with confidence.
               </Text>
               <div className="flex items-center gap-4 mt-3">
                 {socials.map((s, idx) => (
@@ -429,17 +432,17 @@ export default function Footer() {
                     brandhive.studio.lk@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center gap-2 pt-0.5">
-                  <svg className="size-3.5 text-[#25D366] shrink-0 fill-current" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.731-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.59 2.019 14.12 1.012 11.5 1.012c-5.443 0-9.867 4.371-9.871 9.8-.002 2.024.528 4.004 1.536 5.75L2.148 20.89l4.499-1.736z" />
-                  </svg>
+                <li className="pt-0.5">
                   <a
                     href="https://wa.me/94706410093"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#16C7FF] hover:text-[#00AEFF] transition-colors font-semibold flex items-center gap-1"
+                    className="group/wa flex items-center gap-2"
                   >
-                    WhatsApp Chat &rarr;
+                    <svg className="size-3.5 text-[#16C7FF] group-hover/wa:text-[#25D366] shrink-0 fill-current transition-colors duration-300" viewBox="0 0 24 24">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.731-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.59 2.019 14.12 1.012 11.5 1.012c-5.443 0-9.867 4.371-9.871 9.8-.002 2.024.528 4.004 1.536 5.75L2.148 20.89l4.499-1.736z" />
+                    </svg>
+                    <span className="font-semibold text-white">WhatsApp</span>
                   </a>
                 </li>
               </ul>
@@ -453,7 +456,7 @@ export default function Footer() {
 
         {/* Bottom copyright details */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500 pb-0">
-          <p>&copy; 2026 BrandHive Studio. All Rights Reserved.</p>
+          <p>&copy; 2026 BrandHive Studio. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Made with precision &amp; passion.
           </p>

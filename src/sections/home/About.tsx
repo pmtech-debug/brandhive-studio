@@ -2,6 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import aboutWorkspaceImg from "../../../public/images/about/studio/about-modern-agency-workspace.webp";
+import creativeTeamImg from "../../../public/images/about/collaboration/about-creative-team-meeting.webp";
+import uiuxProcessImg from "../../../public/images/about/process/about-uiux-design-process.webp";
+import brandStrategyImg from "../../../public/images/about/branding/about-brand-strategy-workspace.webp";
+import inspirationBoardImg from "../../../public/images/about/lifestyle/about-creative-inspiration-board.webp";
 import { motion, Variants } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Heading from "@/components/typography/Heading";
@@ -58,6 +63,9 @@ const floatAnimation = (yOffset = 6, duration = 5, delay = 0) => ({
     ease: "easeInOut" as const,
     delay,
   },
+  style: {
+    willChange: "transform",
+  },
 });
 
 export default function About() {
@@ -107,11 +115,13 @@ export default function About() {
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-md">
                 <Image
-                  src="/images/about/studio/about-modern-agency-workspace.webp"
+                  src={aboutWorkspaceImg}
                   alt="BrandHive Workspace"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 380px, 340px"
+                  placeholder="blur"
+                  loading="lazy"
                 />
               </div>
 
@@ -122,13 +132,15 @@ export default function About() {
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src="/images/about/collaboration/about-creative-team-meeting.webp"
-                    alt="Our Creative Team"
-                    fill
-                    className="object-cover animate-pulse"
-                    style={{ animationDuration: "12s" }}
-                    sizes="130px"
-                  />
+                     src={creativeTeamImg}
+                     alt="Our Creative Team"
+                     fill
+                     className="object-cover animate-pulse"
+                     style={{ animationDuration: "12s" }}
+                     sizes="130px"
+                     placeholder="blur"
+                     loading="lazy"
+                   />
                 </div>
               </motion.div>
 
@@ -139,12 +151,14 @@ export default function About() {
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src="/images/about/process/about-uiux-design-process.webp"
-                    alt="Creative Process"
-                    fill
-                    className="object-cover"
-                    sizes="110px"
-                  />
+                     src={uiuxProcessImg}
+                     alt="Creative Process"
+                     fill
+                     className="object-cover"
+                     sizes="110px"
+                     placeholder="blur"
+                     loading="lazy"
+                   />
                 </div>
               </motion.div>
 
@@ -155,12 +169,14 @@ export default function About() {
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src="/images/about/branding/about-brand-strategy-workspace.webp"
-                    alt="Brand Strategy Session"
-                    fill
-                    className="object-cover"
-                    sizes="120px"
-                  />
+                     src={brandStrategyImg}
+                     alt="Brand Strategy Session"
+                     fill
+                     className="object-cover"
+                     sizes="120px"
+                     placeholder="blur"
+                     loading="lazy"
+                   />
                 </div>
               </motion.div>
 
@@ -171,12 +187,14 @@ export default function About() {
               >
                 <div className="relative w-full h-full">
                   <Image
-                    src="/images/about/lifestyle/about-creative-inspiration-board.webp"
-                    alt="Design Thinking moodboard"
-                    fill
-                    className="object-cover"
-                    sizes="120px"
-                  />
+                     src={inspirationBoardImg}
+                     alt="Design Thinking moodboard"
+                     fill
+                     className="object-cover"
+                     sizes="120px"
+                     placeholder="blur"
+                     loading="lazy"
+                   />
                 </div>
               </motion.div>
             </div>
@@ -221,15 +239,15 @@ export default function About() {
                   <Counter value={2} />+
                 </p>
                 <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mt-1">
-                  Years Experience
+                  Years of Experience
                 </p>
               </div>
               <div>
                 <p className="text-3xl font-extrabold text-[#16C7FF]">
-                  <Counter value={50} />+
+                  <Counter value={25} />+
                 </p>
                 <p className="text-xs font-semibold text-white/50 uppercase tracking-widest mt-1">
-                  Happy Clients
+                  Clients Served
                 </p>
               </div>
               <div>

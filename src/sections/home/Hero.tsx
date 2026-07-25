@@ -2,6 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import heroLaptopImage from "../../../public/images/hero/devices/hero-laptop-website-presentation.webp";
+import heroIphoneImage from "../../../public/images/hero/devices/hero-iphone-homepage.png";
+import heroUIBranding from "../../../public/images/hero/UI Cards/hero-ui-branding.png";
+import heroUIWebsite from "../../../public/images/hero/UI Cards/hero-ui-website.png";
+import heroUISocial from "../../../public/images/hero/UI Cards/hero-ui-social.png";
+import avatarAbout from "../../../public/images/about/studio/about-design-desk-flat-lay.webp";
+import avatarUzee from "../../../public/images/portfolio/covers/portfolio-uzee-tech-cover.png";
+import avatarSeya from "../../../public/images/portfolio/covers/portfolio-seya-beauty-cover.png";
+import avatarLeo from "../../../public/images/portfolio/covers/portfolio-leo-villas-cover.png";
 import Link from "next/link";
 import { motion, Variants, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Section from "@/components/layout/Section";
@@ -282,10 +291,10 @@ export default function Hero() {
                 className="flex items-center -space-x-3.5"
               >
                 {[
-                  "/images/about/studio/about-design-desk-flat-lay.webp",
-                  "/images/portfolio/covers/portfolio-uzee-tech-cover.png",
-                  "/images/portfolio/covers/portfolio-seya-beauty-cover.png",
-                  "/images/portfolio/covers/portfolio-leo-villas-cover.png"
+                  avatarAbout,
+                  avatarUzee,
+                  avatarSeya,
+                  avatarLeo,
                 ].map((src, i) => (
                   <motion.div 
                     key={i} 
@@ -299,6 +308,9 @@ export default function Hero() {
                       alt="User avatar thumbnail representation"
                       fill
                       className="object-cover"
+                      loading="lazy"
+                      placeholder="blur"
+                      sizes="40px"
                     />
                   </motion.div>
                 ))}
@@ -314,19 +326,19 @@ export default function Hero() {
                   <p className="text-sm sm:text-base font-extrabold text-white leading-none">
                     <Counter value={25} />+
                   </p>
-                  <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Happy Clients</span>
+                  <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Clients Served</span>
                 </div>
                 <div>
                   <p className="text-sm sm:text-base font-extrabold text-white leading-none">
                     <Counter value={50} />+
                   </p>
-                  <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Projects Done</span>
+                  <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Projects Delivered</span>
                 </div>
                 <div>
                   <p className="text-sm sm:text-base font-extrabold text-white leading-none">
-                    <Counter value={6} />+
+                    <Counter value={2} />+
                   </p>
-                  <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Years Exp.</span>
+                  <span className="text-[10px] text-white/50 uppercase font-bold tracking-wider">Years of Experience</span>
                 </div>
               </div>
             </div>
@@ -367,7 +379,7 @@ export default function Hero() {
               transform: `perspective(1000px) rotateX(${coords.rx}deg) rotateY(${coords.ry}deg)`,
               transition: "transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1)"
             }}
-            className="relative w-full max-w-[480px] aspect-[4/3] flex items-center justify-center cursor-none"
+            className="relative w-full max-w-[480px] aspect-[4/3] flex items-center justify-center"
             data-cursor-label="EXPLORE"
           >
             
@@ -390,6 +402,7 @@ export default function Hero() {
                 rotateX: coords.rx * 0.7,
                 rotateY: coords.ry * 0.7,
                 transformStyle: "preserve-3d" as const,
+                willChange: "transform",
               }}
               className="relative w-full aspect-[16/10] z-20 drop-shadow-[0_15px_35px_rgba(0,0,0,0.6)] pointer-events-none"
             >
@@ -403,9 +416,10 @@ export default function Hero() {
                 }}
               />
               <Image
-                src="/images/hero/devices/hero-laptop-website-presentation.webp"
+                src={heroLaptopImage}
                 alt="BrandHive Agency MacBook presentation mockup"
                 fill
+                placeholder="blur"
                 className="object-contain"
                 sizes="(max-width: 1024px) 480px, 420px"
                 priority
@@ -433,6 +447,7 @@ export default function Hero() {
                 rotateY: coords.ry * 1.2,
                 transformStyle: "preserve-3d" as const,
                 x: coords.ry * -4,
+                willChange: "transform",
               }}
               className="absolute bottom-[-15px] right-[-15px] z-30 w-[140px] sm:w-[170px] aspect-[1/2] rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 pointer-events-none"
             >
@@ -445,11 +460,13 @@ export default function Hero() {
                 }}
               />
               <Image
-                src="/images/hero/devices/hero-iphone-homepage.png"
+                src={heroIphoneImage}
                 alt="Responsive mobile homepage mockup showcase"
                 fill
                 className="object-contain z-0"
                 sizes="170px"
+                placeholder="blur"
+                loading="lazy"
               />
             </motion.div>
 
@@ -472,16 +489,19 @@ export default function Hero() {
                 rotateX: coords.rx * 1.5,
                 rotateY: coords.ry * 1.5,
                 x: coords.ry * -8,
+                willChange: "transform",
               }}
               className="absolute -top-6 -left-6 z-10 w-[100px] sm:w-[130px] aspect-square rounded-2xl overflow-hidden border border-white/10 bg-[#11161C]/60 backdrop-blur-md shadow-[0_10px_25px_rgba(0,0,0,0.4)] p-0.5 hover:border-[#16C7FF]/30 transition-colors duration-300 pointer-events-none"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-[#16C7FF]/5 to-transparent pointer-events-none" />
               <Image
-                src="/images/hero/UI Cards/hero-ui-branding.png"
+                src={heroUIBranding}
                 alt="Brand Identity UI moodboard card representation"
                 fill
                 className="object-contain"
                 sizes="130px"
+                placeholder="blur"
+                loading="lazy"
               />
             </motion.div>
 
@@ -504,16 +524,19 @@ export default function Hero() {
                 rotateX: coords.rx * 1.4,
                 rotateY: coords.ry * 1.4,
                 x: coords.ry * -6,
+                willChange: "transform",
               }}
               className="absolute -top-8 right-12 z-10 w-[90px] sm:w-[110px] aspect-square rounded-2xl overflow-hidden border border-white/10 bg-[#11161C]/60 backdrop-blur-md shadow-[0_10px_25px_rgba(0,0,0,0.4)] p-0.5 hover:border-[#16C7FF]/30 transition-colors duration-300 pointer-events-none"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-[#16C7FF]/5 to-transparent pointer-events-none" />
               <Image
-                src="/images/hero/UI Cards/hero-ui-website.png"
+                src={heroUIWebsite}
                 alt="Custom Web Design layout card representation"
                 fill
                 className="object-contain"
                 sizes="110px"
+                placeholder="blur"
+                loading="lazy"
               />
             </motion.div>
 
@@ -536,16 +559,19 @@ export default function Hero() {
                 rotateX: coords.rx * 1.6,
                 rotateY: coords.ry * 1.6,
                 x: coords.ry * -10,
+                willChange: "transform",
               }}
               className="absolute -bottom-8 left-4 z-10 w-[90px] sm:w-[110px] aspect-square rounded-2xl overflow-hidden border border-white/10 bg-[#11161C]/60 backdrop-blur-md shadow-[0_10px_25px_rgba(0,0,0,0.4)] p-0.5 hover:border-[#16C7FF]/30 transition-colors duration-300 pointer-events-none"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-[#16C7FF]/5 to-transparent pointer-events-none" />
               <Image
-                src="/images/hero/UI Cards/hero-ui-social.png"
+                src={heroUISocial}
                 alt="Social Media creative card representation"
                 fill
                 className="object-contain"
                 sizes="110px"
+                placeholder="blur"
+                loading="lazy"
               />
             </motion.div>
 

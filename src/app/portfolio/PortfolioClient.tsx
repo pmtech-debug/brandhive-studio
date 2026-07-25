@@ -2,6 +2,35 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import uzeeTechCover from "../../../public/images/portfolio/covers/portfolio-uzee-tech-cover.png";
+import uzeeTechLogo from "../../../public/images/portfolio/UZEE TECH/01 Logo/logo-icon.png";
+import qdxExpressCover from "../../../public/images/portfolio/covers/portfolio-qdx-express-cover.png";
+import qdxExpressLogo from "../../../public/images/portfolio/QDX Express/01 Logo Design/Primary Logo.png";
+import ruhunuSpiceCover from "../../../public/images/portfolio/covers/portfolio-ruhunu-spice-cover.png";
+import ruhunuSpiceLogo from "../../../public/images/portfolio/Ruhunu Spice & Food/01 Logo Design/Ruhunu_Spice_Food_Logo.png";
+import mobicareCover from "../../../public/images/portfolio/covers/portfolio-mobicare-cover.png";
+import mobicareLogo from "../../../public/images/portfolio/Mobicare/01 Logo Design/MOBICARE_Brand_Icon.png";
+import seyaBeautyCover from "../../../public/images/portfolio/covers/portfolio-seya-beauty-cover.png";
+import seyaBeautyLogo from "../../../public/images/portfolio/Seya Beauty Studio/01 Logo Design/Seya_Beauty_Studio_Logo_Light.png";
+import leoVillasCover from "../../../public/images/portfolio/covers/portfolio-leo-villas-cover.png";
+import leoVillasLogo from "../../../public/images/portfolio/Leo Villas/01 Logo Design/Leo_Villas_Official_Logo.png";
+import vistaTravelsCover from "../../../public/images/portfolio/Vista Travels and Tours/02 Website/home.png";
+import vistaTravelsLogo from "../../../public/images/portfolio/Vista Travels and Tours/01 Logo/logo.png";
+import bethelToursCover from "../../../public/images/portfolio/Bethel Ceylon Tours/02 Website/Home.png";
+import bethelToursLogo from "../../../public/images/portfolio/Bethel Ceylon Tours/01 Logo/logo.png";
+import hardwareStoreCover from "../../../public/images/portfolio/Hardware Store/02 Website/login.png";
+import hardwareStoreLogo from "../../../public/images/portfolio/Hardware Store/01 Logo/logo.png";
+import heroPremiumShowcase from "../../../public/images/portfolio/hero/portfolio-premium-showcase.webp";
+import floatingGlassCards from "../../../public/images/portfolio/hero/floating-glass-portfolio-cards.webp";
+import multiDevicePresentation from "../../../public/images/portfolio/hero/portfolio-multi-device-presentation.webp";
+import thankingNotesCover from "../../../public/images/portfolio/covers/portfolio-thanking-notes-app-cover.svg";
+import thankingNotesLogo from "../../../public/images/portfolio/logos/portfolio-thanking-notes-app-logo.svg";
+import caravanCover from "../../../public/images/portfolio/covers/portfolio-caravan-fresh-cafeteria-cover.svg";
+import caravanLogo from "../../../public/images/portfolio/logos/portfolio-caravan-fresh-cafeteria-logo.svg";
+import paymentMgmtCover from "../../../public/images/portfolio/covers/portfolio-payment-management-system-cover.svg";
+import paymentMgmtLogo from "../../../public/images/portfolio/logos/portfolio-payment-management-system-logo.svg";
+import mathiQuizCover from "../../../public/images/portfolio/covers/portfolio-mathi-quiz-game-cover.svg";
+import mathiQuizLogo from "../../../public/images/portfolio/logos/portfolio-mathi-quiz-game-logo.svg";
 import { motion, Variants } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -16,8 +45,8 @@ const projects = [
     slug: "uzee-tech",
     title: "UZEE TECH",
     category: "Branding & Web Development",
-    cover: "/images/portfolio/covers/portfolio-uzee-tech-cover.png",
-    logo: "/images/portfolio/UZEE%20TECH/01%20Logo/logo-icon.png",
+    cover: uzeeTechCover,
+    logo: uzeeTechLogo,
     shortDescription: "Premium digital identity and custom website development for a next-gen technology provider.",
     badges: ["Brand Strategy", "Logo Design", "Stationery", "Web Development"],
     isFeatured: true,
@@ -26,8 +55,8 @@ const projects = [
     slug: "qdx-express",
     title: "QDX Express",
     category: "Brand Identity & Logistics Design",
-    cover: "/images/portfolio/covers/portfolio-qdx-express-cover.png",
-    logo: "/images/portfolio/QDX%20Express/01%20Logo%20Design/Primary%20Logo.png",
+    cover: qdxExpressCover,
+    logo: qdxExpressLogo,
     shortDescription: "A complete branding system and visual strategy for a modern logistics company.",
     badges: ["Brand Identity", "Vehicle Design"],
     isFeatured: false,
@@ -36,8 +65,8 @@ const projects = [
     slug: "ruhunu-spice-food",
     title: "Ruhunu Spice & Food",
     category: "Packaging & Brand Identity",
-    cover: "/images/portfolio/covers/portfolio-ruhunu-spice-cover.png",
-    logo: "/images/portfolio/Ruhunu%20Spice%20%26%20Food/01%20Logo%20Design/Ruhunu_Spice_Food_Logo.png",
+    cover: ruhunuSpiceCover,
+    logo: ruhunuSpiceLogo,
     shortDescription: "Authentic packaging designs and traditional brand identity for a premium spice manufacturer.",
     badges: ["Label Design", "Packaging", "Logo Identity"],
     isFeatured: false,
@@ -46,8 +75,8 @@ const projects = [
     slug: "mobicare",
     title: "Mobicare",
     category: "Branding & UI/UX Design",
-    cover: "/images/portfolio/covers/portfolio-mobicare-cover.png",
-    logo: "/images/portfolio/Mobicare/01%20Logo%20Design/MOBICARE_Brand_Icon.png",
+    cover: mobicareCover,
+    logo: mobicareLogo,
     shortDescription: "Mobile repair service branding, social media assets, and UI/UX design concepts.",
     badges: ["Logo Design", "Social Media", "UI/UX"],
     isFeatured: false,
@@ -56,8 +85,8 @@ const projects = [
     slug: "seya-beauty-studio",
     title: "Seya Beauty Studio",
     category: "Luxury Branding & UI/UX",
-    cover: "/images/portfolio/covers/portfolio-seya-beauty-cover.png",
-    logo: "/images/portfolio/Seya%20Beauty%20Studio/01%20Logo%20Design/Seya_Beauty_Studio_Logo_Light.png",
+    cover: seyaBeautyCover,
+    logo: seyaBeautyLogo,
     shortDescription: "A high-end salon branding system, social media identity, and booking experience design.",
     badges: ["Brand Identity", "Luxury Logo", "Booking UI"],
     isFeatured: false,
@@ -66,8 +95,8 @@ const projects = [
     slug: "leo-villas",
     title: "Leo Villas",
     category: "Real Estate Branding & Identity",
-    cover: "/images/portfolio/covers/portfolio-leo-villas-cover.png",
-    logo: "/images/portfolio/Leo%20Villas/01%20Logo%20Design/Leo_Villas_Official_Logo.png",
+    cover: leoVillasCover,
+    logo: leoVillasLogo,
     shortDescription: "Premium branding, print stationery, and property presentation materials for luxury villas.",
     badges: ["Real Estate Branding", "Print Stationery", "Brochure Layouts"],
     isFeatured: false,
@@ -75,8 +104,8 @@ const projects = [
     slug: "vista-travels-and-tours",
     title: "Vista Travels and Tours",
     category: "Travel Booking & Experience",
-    cover: "/images/portfolio/Vista%20Travels%20and%20Tours/02%20Website/home.png",
-    logo: "/images/portfolio/Vista%20Travels%20and%20Tours/01%20Logo/logo.png",
+    cover: vistaTravelsCover,
+    logo: vistaTravelsLogo,
     shortDescription: "Full-stack travel booking website offering comprehensive tour packages and booking management.",
     badges: ["Travel Booking", "Full-Stack", "Node.js"],
     isFeatured: false,
@@ -85,8 +114,8 @@ const projects = [
     slug: "bethel-ceylon-tours",
     title: "Bethel Ceylon Tours",
     category: "Travel Management & Customer Experience",
-    cover: "/images/portfolio/Bethel%20Ceylon%20Tours/02%20Website/Home.png",
-    logo: "/images/portfolio/Bethel%20Ceylon%20Tours/01%20Logo/logo.png",
+    cover: bethelToursCover,
+    logo: bethelToursLogo,
     shortDescription: "Travel management website designed to streamline tour operations and customer inquiries.",
     badges: ["Travel Management", "Web Operations", "Customer Experience"],
     isFeatured: false,
@@ -95,8 +124,8 @@ const projects = [
     slug: "hardware-store",
     title: "Hardware Store",
     category: "E-commerce Platform",
-    cover: "/images/portfolio/Hardware%20Store/02%20Website/login.png",
-    logo: "/images/portfolio/Hardware%20Store/01%20Logo/logo.png",
+    cover: hardwareStoreCover,
+    logo: hardwareStoreLogo,
     shortDescription: "Modern e-commerce platform for hardware supplies with dynamic product catalog.",
     badges: ["E-commerce", "Catalog", "Shopping"],
     isFeatured: false,
@@ -105,8 +134,8 @@ const projects = [
     slug: "hotel-management-system",
     title: "Hotel Management System",
     category: "Hospitality & Booking System",
-    cover: "/images/portfolio/hero/portfolio-premium-showcase.webp",
-    logo: "/images/portfolio/hero/floating-glass-portfolio-cards.webp",
+    cover: heroPremiumShowcase,
+    logo: floatingGlassCards,
     shortDescription: "Web-based platform for managing hotel reservations, rooms, and guest services efficiently.",
     badges: ["Reservations", "Guest Services", "Web System"],
     isFeatured: false,
@@ -116,8 +145,8 @@ const projects = [
     slug: "hr-automation-system",
     title: "HR Automation System",
     category: "Desktop HR Automation",
-    cover: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
-    logo: "/images/portfolio/hero/portfolio-premium-showcase.webp",
+    cover: multiDevicePresentation,
+    logo: heroPremiumShowcase,
     shortDescription: "Desktop application for automating HR workflows, employee records, and administrative tasks.",
     badges: ["Automation", "Employee Management", "Desktop App"],
     isFeatured: false,
@@ -127,8 +156,8 @@ const projects = [
     slug: "thanking-notes-app",
     title: "Thanking Notes App",
     category: "Employee Communication",
-    cover: "/images/portfolio/covers/portfolio-thanking-notes-app-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-thanking-notes-app-logo.svg",
+    cover: thankingNotesCover,
+    logo: thankingNotesLogo,
     shortDescription: "Internal communication desktop system for employees to share appreciation and notes.",
     badges: ["Communication", "Productivity", "Desktop"],
     isFeatured: false,
@@ -138,8 +167,8 @@ const projects = [
     slug: "caravan-fresh-cafeteria",
     title: "Caravan Fresh Cafeteria",
     category: "Cafeteria Management Dashboard",
-    cover: "/images/portfolio/covers/portfolio-caravan-fresh-cafeteria-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-caravan-fresh-cafeteria-logo.svg",
+    cover: caravanCover,
+    logo: caravanLogo,
     shortDescription: "Comprehensive cafeteria management system with order processing, menu management, and authentication.",
     badges: ["MERN Stack", "Dashboard", "Order Management"],
     isFeatured: false,
@@ -149,8 +178,8 @@ const projects = [
     slug: "payment-management-system",
     title: "Payment Management System",
     category: "Secure Transaction Platform",
-    cover: "/images/portfolio/covers/portfolio-payment-management-system-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-payment-management-system-logo.svg",
+    cover: paymentMgmtCover,
+    logo: paymentMgmtLogo,
     shortDescription: "Secure transaction management system built with strong Object-Oriented Programming principles.",
     badges: ["OOP", "Security", "Payments"],
     isFeatured: false,
@@ -160,8 +189,8 @@ const projects = [
     slug: "mathi-quiz-game",
     title: "Mathi Quiz Game",
     category: "Mobile Quiz & Gamification",
-    cover: "/images/portfolio/covers/portfolio-mathi-quiz-game-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-mathi-quiz-game-logo.svg",
+    cover: mathiQuizCover,
+    logo: mathiQuizLogo,
     shortDescription: "Engaging mobile quiz application featuring timed challenges and dynamic scoring systems.",
     badges: ["Mobile", "Game", "Quizzes"],
     isFeatured: false,
@@ -171,8 +200,8 @@ const projects = [
     slug: "blossom-task",
     title: "Blossom Task",
     category: "Task Management & Productivity",
-    cover: "/images/portfolio/hero/portfolio-premium-showcase.webp",
-    logo: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
+    cover: heroPremiumShowcase,
+    logo: multiDevicePresentation,
     shortDescription: "Task management application supporting full CRUD operations and deadline tracking.",
     badges: ["CRUD", "Productivity", "Task Tracking"],
     isFeatured: false,
@@ -261,6 +290,7 @@ export default function PortfolioClient() {
                       className="object-cover opacity-90 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       priority
+                      placeholder={typeof featuredProject.cover === "object" && Boolean(featuredProject.cover?.blurDataURL) ? "blur" : undefined}
                     />
                     <div className="absolute inset-0 bg-neutral-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
@@ -277,6 +307,8 @@ export default function PortfolioClient() {
                             width={36}
                             height={36}
                             className="object-contain transition-all duration-300 ease-out group-hover:brightness-[1.04] group-hover:contrast-[1.04]"
+                            placeholder={typeof featuredProject.logo === "object" && Boolean(featuredProject.logo?.blurDataURL) ? "blur" : undefined}
+                            loading="lazy"
                           />
                         </div>
                         <span className="text-xl font-bold text-white group-hover:text-[#16C7FF] transition-colors duration-300">
@@ -357,6 +389,7 @@ export default function PortfolioClient() {
                         fill
                         className="object-cover opacity-90 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        placeholder={typeof project.cover === "object" && Boolean(project.cover?.blurDataURL) ? "blur" : undefined}
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-neutral-950/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -374,6 +407,8 @@ export default function PortfolioClient() {
                               width={32}
                               height={32}
                               className="object-contain transition-all duration-300 ease-out group-hover:brightness-[1.04] group-hover:contrast-[1.04]"
+                              placeholder={typeof project.logo === "object" && Boolean(project.logo?.blurDataURL) ? "blur" : undefined}
+                              loading="lazy"
                             />
                           </div>
                           <span className="text-lg font-bold text-white mt-0.5 group-hover:text-[#16C7FF] transition-colors duration-300 truncate">

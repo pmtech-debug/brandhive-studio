@@ -1,8 +1,16 @@
 "use client";
 
+import type { StaticImageData } from "next/image";
+
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import uzeeTechCover from "../../../public/images/portfolio/covers/portfolio-uzee-tech-cover.png";
+import uzeeTechLogo from "../../../public/images/portfolio/UZEE TECH/01 Logo/logo-icon.png";
+import qdxExpressCover from "../../../public/images/portfolio/covers/portfolio-qdx-express-cover.png";
+import qdxExpressLogo from "../../../public/images/portfolio/QDX Express/01 Logo Design/Primary Logo.png";
+import bethelTourCover from "../../../public/images/portfolio/Bethel Ceylon Tours/02 Website/Home.png";
+import bethelTourLogo from "../../../public/images/portfolio/Bethel Ceylon Tours/01 Logo/logo.png";
 import { motion, Variants, useReducedMotion } from "framer-motion";
 import Section from "@/components/layout/Section";
 import Heading from "@/components/typography/Heading";
@@ -10,13 +18,28 @@ import Text from "@/components/typography/Text";
 import Badge from "@/components/ui/Badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/cards/Card";
 import { staggerContainer } from "@/lib/animations";
+import { Button } from "@/components/ui/Button";
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  image: StaticImageData | string;
+  logo: StaticImageData | string;
+  description: string;
+  href: string;
+  client: string;
+  industry: string;
+  services: string;
+  year: string;
+  isOngoing?: boolean;
+}
+
+const projects: Project[] = [
   {
     title: "UZEE TECH",
     category: "Branding & Web Development",
-    image: "/images/portfolio/covers/portfolio-uzee-tech-cover.png",
-    logo: "/images/portfolio/UZEE%20TECH/01%20Logo/logo-icon.png",
+    image: uzeeTechCover,
+    logo: uzeeTechLogo,
     description: "Premium digital identity and custom website development for a next-gen technology provider.",
     href: "/portfolio/uzee-tech",
     client: "Uzee Tech",
@@ -27,8 +50,8 @@ const projects = [
   {
     title: "QDX Express",
     category: "Brand Identity & Logistics",
-    image: "/images/portfolio/covers/portfolio-qdx-express-cover.png",
-    logo: "/images/portfolio/QDX%20Express/01%20Logo%20Design/Primary%20Logo.png",
+    image: qdxExpressCover,
+    logo: qdxExpressLogo,
     description: "A complete branding system and corporate stationery design for a modern logistics company.",
     href: "/portfolio/qdx-express",
     client: "QDX Logistics",
@@ -37,179 +60,16 @@ const projects = [
     year: "2025",
   },
   {
-    title: "Ruhunu Spice & Food",
-    category: "Packaging & Brand Identity",
-    image: "/images/portfolio/covers/portfolio-ruhunu-spice-cover.png",
-    logo: "/images/portfolio/Ruhunu%20Spice%20%26%20Food/01%20Logo%20Design/Ruhunu_Spice_Food_Logo.png",
-    description: "Authentic packaging designs and traditional brand identity for a premium spice manufacturer.",
-    href: "/portfolio/ruhunu-spice-food",
-    client: "Ruhunu Spices",
-    industry: "Food & Beverage",
-    services: "Packaging, Branding",
-    year: "2025",
-  },
-  {
-    title: "Mobicare",
-    category: "Branding & UI/UX Design",
-    image: "/images/portfolio/covers/portfolio-mobicare-cover.png",
-    logo: "/images/portfolio/Mobicare/01%20Logo%20Design/MOBICARE_Brand_Icon.png",
-    description: "Mobile repair service branding, social media assets, and UI/UX design concepts.",
-    href: "/portfolio/mobicare",
-    client: "Mobicare PVT",
-    industry: "Telecommunications",
-    services: "Branding, UI/UX",
-    year: "2026",
-  },
-  {
-    title: "Seya Beauty Studio",
-    category: "Luxury Branding & UI/UX",
-    image: "/images/portfolio/covers/portfolio-seya-beauty-cover.png",
-    logo: "/images/portfolio/Seya%20Beauty%20Studio/01%20Logo%20Design/Seya_Beauty_Studio_Logo_Light.png",
-    description: "A high-end salon branding system, social media identity, and booking experience design.",
-    href: "/portfolio/seya-beauty-studio",
-    client: "Seya Studio",
-    industry: "Wellness & Beauty",
-    services: "Branding, Web Design",
-    year: "2026",
-  },
-  {
-    title: "Leo Villas",
-    category: "Real Estate Branding",
-    image: "/images/portfolio/covers/portfolio-leo-villas-cover.png",
-    logo: "/images/portfolio/Leo%20Villas/01%20Logo%20Design/Leo_Villas_Official_Logo.png",
-    description: "Premium branding, print stationery, and property presentation materials for luxury villas.",
-    href: "/portfolio/leo-villas",
-    client: "Leo Properties",
-    industry: "Real Estate",
-    services: "Branding, Print",
-    year: "2025",
-  },
-  {
-    title: "Vista Travels and Tours",
-    category: "Travel Booking Platform",
-    image: "/images/portfolio/Vista%20Travels%20and%20Tours/02%20Website/home.png",
-    logo: "/images/portfolio/Vista%20Travels%20and%20Tours/01%20Logo/logo.png",
-    description: "Full-stack travel booking website offering comprehensive tour packages and booking management.",
-    href: "/portfolio/vista-travels-and-tours",
-    client: "Vista Travels",
-    industry: "Travel",
-    services: "Web Development, Booking",
-    year: "2026",
-  },
-  {
     title: "Bethel Ceylon Tours",
     category: "Travel Management",
-    image: "/images/portfolio/Bethel%20Ceylon%20Tours/02%20Website/Home.png",
-    logo: "/images/portfolio/Bethel%20Ceylon%20Tours/01%20Logo/logo.png",
+    image: bethelTourCover,
+    logo: bethelTourLogo,
     description: "Travel management website designed to streamline tour operations and customer inquiries.",
     href: "/portfolio/bethel-ceylon-tours",
     client: "Bethel Ceylon Tours",
     industry: "Travel",
     services: "Booking, Management",
     year: "2026",
-  },
-  {
-    title: "Hardware Store",
-    category: "E-commerce",
-    image: "/images/portfolio/Hardware%20Store/02%20Website/login.png",
-    logo: "/images/portfolio/Hardware%20Store/01%20Logo/logo.png",
-    description: "Modern e-commerce platform for hardware supplies with dynamic product catalog.",
-    href: "/portfolio/hardware-store",
-    client: "Hardware Store",
-    industry: "Retail",
-    services: "E-commerce, Catalog",
-    year: "2026",
-  },
-  {
-    title: "Hotel Management System",
-    category: "Hospitality",
-    image: "/images/portfolio/hero/portfolio-premium-showcase.webp",
-    logo: "/images/portfolio/hero/floating-glass-portfolio-cards.webp",
-    description: "Web-based platform for managing hotel reservations, rooms, and guest services efficiently.",
-    href: "/portfolio/hotel-management-system",
-    client: "Hotel Management",
-    industry: "Hospitality",
-    services: "Reservations, Dashboard",
-    year: "2026",
-    isOngoing: true,
-  },
-  {
-    title: "HR Automation System",
-    category: "Desktop Productivity",
-    image: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
-    logo: "/images/portfolio/hero/portfolio-premium-showcase.webp",
-    description: "Desktop application for automating HR workflows, employee records, and administrative tasks.",
-    href: "/portfolio/hr-automation-system",
-    client: "HR Automation",
-    industry: "Human Resources",
-    services: "Automation, Records",
-    year: "2026",
-    isOngoing: true,
-  },
-  {
-    title: "Thanking Notes App",
-    category: "Employee Communication",
-    image: "/images/portfolio/covers/portfolio-thanking-notes-app-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-thanking-notes-app-logo.svg",
-    description: "Internal communication desktop system for employees to share appreciation and notes.",
-    href: "/portfolio/thanking-notes-app",
-    client: "Thanking Notes",
-    industry: "Corporate Wellness",
-    services: "Communication, Recognition",
-    year: "2026",
-    isOngoing: true,
-  },
-  {
-    title: "Caravan Fresh Cafeteria",
-    category: "Cafeteria Operations",
-    image: "/images/portfolio/covers/portfolio-caravan-fresh-cafeteria-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-caravan-fresh-cafeteria-logo.svg",
-    description: "Comprehensive cafeteria management system with order processing, menu management, and authentication.",
-    href: "/portfolio/caravan-fresh-cafeteria",
-    client: "Caravan Fresh",
-    industry: "Food Service",
-    services: "Management, Orders",
-    year: "2026",
-    isOngoing: true,
-  },
-  {
-    title: "Payment Management System",
-    category: "Secure Fintech",
-    image: "/images/portfolio/covers/portfolio-payment-management-system-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-payment-management-system-logo.svg",
-    description: "Secure transaction management system built with strong Object-Oriented Programming principles.",
-    href: "/portfolio/payment-management-system",
-    client: "Payment Management",
-    industry: "Fintech",
-    services: "Security, Transactions",
-    year: "2026",
-    isOngoing: true,
-  },
-  {
-    title: "Mathi Quiz Game",
-    category: "Mobile Learning",
-    image: "/images/portfolio/covers/portfolio-mathi-quiz-game-cover.svg",
-    logo: "/images/portfolio/logos/portfolio-mathi-quiz-game-logo.svg",
-    description: "Engaging mobile quiz application featuring timed challenges and dynamic scoring systems.",
-    href: "/portfolio/mathi-quiz-game",
-    client: "Mathi Games",
-    industry: "Mobile Apps",
-    services: "Game Design, UX",
-    year: "2026",
-    isOngoing: true,
-  },
-  {
-    title: "Blossom Task",
-    category: "Productivity Software",
-    image: "/images/portfolio/hero/portfolio-premium-showcase.webp",
-    logo: "/images/portfolio/hero/portfolio-multi-device-presentation.webp",
-    description: "Task management application supporting full CRUD operations and deadline tracking.",
-    href: "/portfolio/blossom-task",
-    client: "Blossom Task",
-    industry: "Productivity",
-    services: "Task Management, Tracking",
-    year: "2026",
-    isOngoing: true,
   },
 ];
 
@@ -276,15 +136,15 @@ export default function Portfolio() {
         <div className="flex flex-col items-center gap-4 text-center mb-16 max-w-[800px] mx-auto px-4">
           <Badge
             variant="secondary"
-            className="px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF]"
+            className="px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF] uppercase tracking-wider"
           >
-            Our Work
+            FEATURED WORK
           </Badge>
           <Heading level="h2" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white border-none pb-0">
-            Selected <span className="text-[#16C7FF] bg-clip-text bg-gradient-to-r from-[#16C7FF] to-blue-500">Portfolio Masterpieces</span>
+            Selected <span className="text-[#16C7FF] bg-clip-text bg-gradient-to-r from-[#16C7FF] to-blue-500">Client Success Stories</span>
           </Heading>
           <Text className="text-white/60 text-base sm:text-lg leading-relaxed mt-1">
-            We partner with forward-thinking businesses to craft unique design languages, premium interfaces, and impactful branding systems.
+            A curated selection of branding, digital products, websites, and business solutions that showcase the quality, creativity, and strategic thinking behind BrandHive Studio.
           </Text>
         </div>
 
@@ -297,7 +157,7 @@ export default function Portfolio() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8"
         >
           {projects.map((project, index) => (
-            <motion.div key={index} variants={cardVariants} className="h-full">
+            <motion.div key={index} variants={cardVariants} style={{ willChange: "transform, opacity" }} className="h-full">
               <Link href={project.href} className="group block h-full focus-visible:outline-none" data-cursor-label="VIEW CASE STUDY">
                 {/* 3D tilt and lighting sweep showcase card */}
                 <div
@@ -341,6 +201,8 @@ export default function Portfolio() {
                           fill
                           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06] opacity-90 group-hover:opacity-100"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          placeholder="blur"
+                          loading="lazy"
                         />
                       </motion.div>
                       <div className="absolute inset-0 bg-gradient-to-t from-[#050608]/40 to-transparent pointer-events-none z-10" />
@@ -353,12 +215,14 @@ export default function Portfolio() {
                         {/* Logo container - White Badge */}
                         <div className="relative size-12 rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#E8E8E8] p-2 flex items-center justify-center shadow-[0_8px_20px_rgba(0,0,0,0.06)] shrink-0 transition-all duration-300 ease-out group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(22,199,255,0.22),0_8px_20px_rgba(0,0,0,0.04)] group-hover:border-[#16C7FF]/40">
                           <Image
-                            src={project.logo}
-                            alt={`${project.title} Logo`}
-                            width={32}
-                            height={32}
-                            className="object-contain transition-all duration-300 ease-out group-hover:brightness-[1.04] group-hover:contrast-[1.04]"
-                          />
+                              src={project.logo}
+                              alt={`${project.title} Logo`}
+                              width={32}
+                              height={32}
+                              className="object-contain transition-all duration-300 ease-out group-hover:brightness-[1.04] group-hover:contrast-[1.04]"
+                              placeholder="blur"
+                              loading="lazy"
+                            />
                         </div>
                         <span className="text-xs font-bold uppercase tracking-wider text-white/50 group-hover:text-[#16C7FF] transition-colors duration-300">
                           {project.category}
@@ -422,6 +286,15 @@ export default function Portfolio() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* View Full Portfolio CTA */}
+        <div className="flex justify-center mt-12 sm:mt-16">
+          <Link href="/portfolio">
+            <Button variant="default" size="lg">
+              View Full Portfolio &rarr;
+            </Button>
+          </Link>
+        </div>
       </Section>
     </div>
   );

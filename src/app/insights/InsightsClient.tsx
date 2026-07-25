@@ -16,44 +16,44 @@ const categories = ["All", "Branding", "Web Design", "Logo Design", "Marketing",
 
 const articles = [
   {
-    title: "The Core Elements of a Timeless Logo Design",
-    description: "Discover the rules of visual balance, semantic meaning, and layout proportions that make corporate logomarks memorable.",
-    image: "/images/insights/insights-logo-design.png",
-    category: "Logo Design",
-    date: "July 08, 2026",
-    readTime: "5 min read",
-  },
-  {
-    title: "Strategic Branding: How to Stand Out in Crowded Markets",
-    description: "Learn how to build customer trust and distinct positioning by aligning design assets with business goals.",
-    image: "/images/insights/insights-branding.png",
+    title: "Strategic Branding: How Great Brands Build Trust",
+    description: "Learn how successful brands use positioning, identity systems, and consistency to create memorable customer experiences.",
+    image: "/images/services/insights/branding-hero.webp",
     category: "Branding",
     date: "July 01, 2026",
-    readTime: "7 min read",
+    readTime: "7 MIN READ",
   },
   {
-    title: "Scaling Customer Acquisition via Strategic Meta Ads",
-    description: "Maximize your campaign conversions by deploying optimized visual assets, audiences, and performance indicators.",
-    image: "/images/insights/insights-marketing.png",
-    category: "Marketing",
+    title: "Modern Website Design That Converts Visitors",
+    description: "Explore the principles behind fast, responsive, user-focused websites that transform visitors into loyal customers.",
+    image: "/images/services/insights/web-design-hero.webp",
+    category: "Web Design",
     date: "June 25, 2026",
-    readTime: "6 min read",
+    readTime: "8 MIN READ",
   },
   {
-    title: "Curating Social Media Grids for High-End Engagement",
-    description: "A comprehensive guide on styling typography grids and pastels color palettes to attract high-paying leads.",
-    image: "/images/insights/insights-social-media.png",
-    category: "Social Media",
+    title: "Designing Logos That Represent Brands Perfectly",
+    description: "Understand the balance of simplicity, scalability, typography, and symbolism behind memorable logo design.",
+    image: "/images/services/insights/logo-design-hero.webp",
+    category: "Logo Design",
     date: "June 18, 2026",
-    readTime: "4 min read",
+    readTime: "6 MIN READ",
   },
   {
-    title: "Positioning Your Tech Startup for Sustainable Growth",
-    description: "How early stage SaaS and service agencies combine modern architectures and robust branding to scale.",
-    image: "/images/insights/insights-business-growth.png",
-    category: "Business Growth",
+    title: "Performance Marketing Beyond Paid Advertising",
+    description: "Discover how data-driven campaigns, audience research, and creative execution produce measurable business growth.",
+    image: "/images/services/insights/marketing-hero.webp",
+    category: "Marketing",
     date: "June 10, 2026",
-    readTime: "8 min read",
+    readTime: "8 MIN READ",
+  },
+  {
+    title: "Scaling Businesses Through Digital Transformation",
+    description: "See how technology, automation, branding, and strategic planning work together to accelerate sustainable business growth.",
+    image: "/images/services/insights/business-growth-hero.webp",
+    category: "Business Growth",
+    date: "June 02, 2026",
+    readTime: "9 MIN READ",
   },
 ];
 
@@ -84,14 +84,14 @@ export default function InsightsClient() {
               variant="secondary"
               className="w-fit px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF] backdrop-blur-md tracking-wider uppercase shadow-[0_0_15px_rgba(22,199,255,0.05)]"
             >
-              Our Insights
+              OUR INSIGHTS
             </Badge>
             <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white border-none pb-0">
               Perspectives on <br />
               <span className="text-[#16C7FF] bg-clip-text bg-gradient-to-r from-[#16C7FF] to-blue-500">Design & Technology.</span>
             </Heading>
             <Text className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-3xl font-normal">
-              Discover guides, strategies, and case insights written by our design and development specialists.
+              Discover expert insights, practical strategies, and real-world perspectives on branding, web design, digital marketing, business growth, and modern technology—crafted to help ambitious businesses make better digital decisions.
             </Text>
           </div>
         </Container>
@@ -100,46 +100,48 @@ export default function InsightsClient() {
       <HeroDivider />
 
       {/* 2. Featured Article Spot */}
-      <Section className="py-8 bg-transparent">
-        <Container>
-          <div className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 bg-[#11161C]/55 overflow-hidden shadow-2xl hover:border-[#16C7FF]/20 transition-all duration-300">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12">
-              
-              {/* Image Column */}
-              <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-video w-full bg-neutral-900 overflow-hidden">
-                <Image
-                  src="/images/insights/insights-web-design.png"
-                  alt="Featured Article - Apple minimalism in web design"
-                  fill
-                  className="object-cover opacity-90 transition-opacity duration-300 hover:opacity-100"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                />
-              </div>
-
-              {/* Details Column */}
-              <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col gap-5">
-                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-[#16C7FF]">
-                  <span>Featured Post</span>
-                  <span className="size-1 rounded-full bg-white/10" />
-                  <span>Web Design</span>
+      {(selectedCategory === "All" || selectedCategory === "Branding") && (
+        <Section className="py-8 bg-transparent">
+          <Container>
+            <div className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 bg-[#11161C]/55 overflow-hidden shadow-2xl hover:border-[#16C7FF]/20 transition-all duration-300">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-12">
+                
+                {/* Image Column */}
+                <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-video w-full bg-neutral-900 overflow-hidden">
+                  <Image
+                    src="/images/services/insights/service-visual-identity-system.webp"
+                    alt="Featured Article - Building Brands That Stand the Test of Time"
+                    fill
+                    className="object-cover opacity-90 transition-opacity duration-300 hover:opacity-100"
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                  />
                 </div>
-                <Heading level="h2" className="text-2xl sm:text-3xl font-extrabold text-white border-none pb-0 leading-tight">
-                  Why Apple-Inspired Minimalism Dominates Web Design
-                </Heading>
-                <Text className="text-sm sm:text-base text-white/70 leading-relaxed font-normal">
-                  An in-depth exploration of visual spacing, typography hierarchies, and grid layouts that drive visitor conversions and customer retention.
-                </Text>
-                <div className="flex items-center justify-between text-xs font-bold text-white/50 mt-2">
-                  <span>July 12, 2026</span>
-                  <span>9 min read</span>
-                </div>
-              </div>
 
+                {/* Details Column */}
+                <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col gap-5">
+                  <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-[#16C7FF]">
+                    <span>FEATURED ARTICLE</span>
+                    <span className="size-1 rounded-full bg-white/10" />
+                    <span>BRANDING</span>
+                  </div>
+                  <Heading level="h2" className="text-2xl sm:text-3xl font-extrabold text-white border-none pb-0 leading-tight">
+                    Building Brands That Stand the Test of Time
+                  </Heading>
+                  <Text className="text-sm sm:text-base text-white/70 leading-relaxed font-normal">
+                    Discover how strategic branding, visual identity systems, and consistent customer experiences help businesses establish trust, increase recognition, and create long-term competitive advantages.
+                  </Text>
+                  <div className="flex items-center justify-between text-xs font-bold text-white/50 mt-2">
+                    <span>July 12, 2026</span>
+                    <span>10 MIN READ</span>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
-        </Container>
-      </Section>
+          </Container>
+        </Section>
+      )}
 
       {/* 3. Search and Category Filter Row */}
       <Section className="py-12 bg-transparent border-t border-white/5">
@@ -166,7 +168,7 @@ export default function InsightsClient() {
             <div className="relative w-full md:max-w-xs shrink-0">
               <input
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Search insights..."
                 value={searchQuery}
                 aria-label="Search articles"
                 id="search-articles-input"
@@ -255,10 +257,10 @@ export default function InsightsClient() {
                 STAY INFORMED
               </Badge>
               <Heading level="h2" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white border-none pb-0">
-                Subscribe to our Newsletter
+                Subscribe to Our Newsletter
               </Heading>
               <Text className="text-white/70 text-sm sm:text-base leading-relaxed font-normal">
-                Join modern builders. Get premium design resources, layout guidelines, and SEO checklists directly to your inbox.
+                Receive exclusive insights, practical design strategies, digital marketing trends, and business growth ideas delivered directly to your inbox.
               </Text>
               
               {/* Form Input */}

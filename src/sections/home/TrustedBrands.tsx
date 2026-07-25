@@ -1,33 +1,39 @@
 "use client";
 
 import Image from "next/image";
+import uzeeTechLogo from "../../../public/images/portfolio/UZEE TECH/01 Logo/logo-icon.png";
+import qdxExpressLogo from "../../../public/images/portfolio/QDX Express/01 Logo Design/Primary Logo.png";
+import leoVillasLogo from "../../../public/images/portfolio/Leo Villas/01 Logo Design/Leo_Villas_Official_Logo.png";
+import seyaBeautyStudioLogo from "../../../public/images/portfolio/Seya Beauty Studio/01 Logo Design/Seya_Beauty_Studio_Logo_Light.png";
+import ruhunuSpiceFoodLogo from "../../../public/images/portfolio/Ruhunu Spice & Food/01 Logo Design/Ruhunu_Spice_Food_Logo.png";
+import mobicareLogo from "../../../public/images/portfolio/Mobicare/01 Logo Design/MOBICARE_Brand_Icon.png";
 import { motion, Variants, useReducedMotion } from "framer-motion";
 import Container from "@/components/layout/Container";
 
 const brands = [
   {
     name: "UZEE TECH",
-    logo: "/images/portfolio/UZEE TECH/01 Logo/logo-icon.png",
+    logo: uzeeTechLogo,
   },
   {
     name: "QDX Express",
-    logo: "/images/portfolio/QDX Express/01 Logo Design/Primary Logo.png",
+    logo: qdxExpressLogo,
   },
   {
     name: "Leo Villas",
-    logo: "/images/portfolio/Leo%20Villas/01%20Logo%20Design/Leo_Villas_Official_Logo.png",
+    logo: leoVillasLogo,
   },
   {
     name: "Seya Beauty Studio",
-    logo: "/images/portfolio/Seya%20Beauty%20Studio/01%20Logo%20Design/Seya_Beauty_Studio_Logo_Light.png",
+    logo: seyaBeautyStudioLogo,
   },
   {
     name: "Ruhunu Spice & Food",
-    logo: "/images/portfolio/Ruhunu%20Spice%20%26%20Food/01%20Logo%20Design/Ruhunu_Spice_Food_Logo.png",
+    logo: ruhunuSpiceFoodLogo,
   },
   {
     name: "Mobicare",
-    logo: "/images/portfolio/Mobicare/01%20Logo%20Design/MOBICARE_Brand_Icon.png",
+    logo: mobicareLogo,
   },
 ];
 
@@ -86,11 +92,9 @@ export default function TrustedBrands() {
                 variants={itemVariants}
                 whileHover={{ 
                   scale: 1.05,
-                  opacity: 1,
-                  borderColor: "rgba(22, 199, 255, 0.35)",
-                  boxShadow: "0 0 20px rgba(22, 199, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.1)"
+                  opacity: 1
                 }}
-                className="group relative rounded-2xl bg-white/[0.02] border border-white/[0.07] backdrop-blur-[2px] py-4 px-6 flex items-center justify-center cursor-pointer transition-all duration-300 ease-out shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
+                className="group relative rounded-2xl bg-white/[0.02] border border-white/[0.07] hover:border-[#16C7FF]/35 hover:shadow-[0_0_20px_rgba(22,199,255,0.15),0_8px_24px_rgba(0, 0, 0, 0.1)] backdrop-blur-[2px] py-4 px-6 flex items-center justify-center cursor-pointer transition-all duration-300 ease-out shadow-[0_8px_20px_rgba(0,0,0,0.12)]"
               >
                 <div className="flex items-center gap-3.5">
                   <div className="relative size-[38px] transition-all duration-300 ease-out group-hover:brightness-110">
@@ -100,6 +104,8 @@ export default function TrustedBrands() {
                       fill
                       className="object-contain"
                       sizes="38px"
+                      loading="lazy"
+                      placeholder="blur"
                     />
                   </div>
                   <span className="text-sm font-extrabold text-white/50 tracking-wider uppercase leading-none transition-colors duration-300 group-hover:text-white/90">

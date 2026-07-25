@@ -125,6 +125,7 @@
   opacity: 0.015;
   pointer-events: none;
   animation: noise-animation 0.25s steps(4) infinite;
+  will-change: transform;
 }
 
 .blueprint-grid {
@@ -233,50 +234,22 @@
   }
 }
 
-/* Card Breathing Ambient Glow */
+/* Card Breathing Ambient Glow — GPU-composited via opacity instead of box-shadow */
 @keyframes breathing-glow {
   0%, 100% {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(22, 199, 255, 0.01);
+    opacity: 0.92;
   }
   50% {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(22, 199, 255, 0.04);
+    opacity: 1;
   }
 }
 
 .breathing-card {
   animation: breathing-glow 6s ease-in-out infinite;
+  will-change: opacity;
 }
 
-.reflection-sweep {
-  position: relative;
-  overflow: hidden;
-}
 
-.reflection-sweep::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(22, 199, 255, 0.04) 30%,
-    rgba(22, 199, 255, 0.08) 50%,
-    rgba(22, 199, 255, 0.04) 70%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  transition: none;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.reflection-sweep:hover::after {
-  left: 150%;
-  transition: left 0.95s ease-out;
-}
 
 @layer base {
   * {

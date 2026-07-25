@@ -359,9 +359,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${project.title} Case Study | BrandHive Studio`,
     description: project.shortDescription,
+    alternates: { canonical: `https://brandhivestudio.com.lk/portfolio/${slug}` },
     openGraph: {
       title: `${project.title} - Portfolio | BrandHive Studio`,
       description: project.shortDescription,
+      url: `https://brandhivestudio.com.lk/portfolio/${slug}`,
       images: [{ url: project.cover, width: 1200, height: 630, alt: `${project.title} Cover` }],
       type: "website",
     },

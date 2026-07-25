@@ -4,16 +4,19 @@ import PortfolioClient from "./PortfolioClient";
 export const metadata: Metadata = {
   title: "Our Work & Case Studies | BrandHive Studio",
   description: "Explore the BrandHive Studio design and development portfolio. Read our featured case studies detailing custom corporate identities, luxury packaging design, and modern web engineering.",
+  alternates: { canonical: "https://brandhivestudio.com.lk/portfolio" },
   openGraph: {
     title: "Our Work & Case Studies | BrandHive Studio",
     description: "Explore the BrandHive Studio design and development portfolio.",
     type: "website",
-    url: "https://brandhivestudio.com/portfolio",
+    url: "https://brandhivestudio.com.lk/portfolio",
+    images: [{ url: "https://brandhivestudio.com.lk/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Our Work & Case Studies | BrandHive Studio",
     description: "Explore the BrandHive Studio design and development portfolio.",
+    images: ["https://brandhivestudio.com.lk/og-image.png"],
   }
 };
 

@@ -2,7 +2,6 @@
 
 import { ReactNode } from "react";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import Cursor from "@/components/ui/Cursor";
 import CinematicBackground from "@/components/backgrounds/CinematicBackground";
 import DeferredFloatingChatbot from "@/components/ui/DeferredFloatingChatbot";
 import ClientSetupProvider from "@/components/providers/ClientSetupProvider";
@@ -32,7 +31,6 @@ export default function ClientOverlays({ children }: ClientOverlaysProps) {
       <ClientSetupProvider>
         <ScrollProgress />
         <div className={cn("fixed inset-0 pointer-events-none z-[9999] grain-overlay", !isHeavyEnabled && "no-animate")} />
-        <Cursor />
         <CinematicBackground />
         <PageTransitionProvider>{children}</PageTransitionProvider>
         <DeferredFloatingChatbot />

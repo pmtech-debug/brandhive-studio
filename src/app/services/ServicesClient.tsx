@@ -13,29 +13,62 @@ import { Button } from "@/components/ui/Button";
 
 const serviceSections = [
   {
-    badge: "IDENTITY & VISION",
-    title: "Brand Strategy & Visual Systems",
-    description: "We design premium branding frameworks that set the standard. From core values, customer alignment, typographic hierarchy, and logo design to complete visual identity guidelines, we help companies speak clearly and confidently.",
+    badge: "BRAND FOUNDATION",
+    title: "Brand Strategy & Identity Systems",
+    description: "Create a memorable brand built on strategy, consistency, and visual excellence. From defining your market position to developing complete identity systems, we help businesses establish a professional presence that inspires trust and recognition across every customer touchpoint.",
     image: "/images/services/branding/service-brand-strategy-workshop.webp",
-    features: ["Visual Positioning", "Typographic Frameworks", "Corporate Logo Systems", "Brand Manuals Layouts"],
+    features: [
+      "Brand Positioning",
+      "Visual Identity Design",
+      "Corporate Logo Systems",
+      "Typography Systems",
+      "Brand Guidelines"
+    ],
     isReversed: false,
   },
   {
-    badge: "BESPOKE INTERFACES",
-    title: "Website Design & Corporate Portals",
-    description: "We construct high-speed corporate web platforms and premium digital experiences. Leveraging React frameworks, semantic layouts, responsive structures, and advanced client transitions, we ensure visual excellence on every device.",
-    image: "/images/services/website-design/service-responsive-website-mockup.webp",
-    features: ["Bespoke Web Design", "Corporate Web Portals", "Responsive Architecture", "High Fidelity Prototypes"],
+    badge: "DIGITAL EXPERIENCES",
+    title: "Web Experience & Digital Platforms",
+    description: "Design and develop high-performance websites and digital platforms that combine modern aesthetics with exceptional usability. Every solution is responsive, scalable, and engineered to deliver a seamless experience across every device.",
+    image: "/images/services/website-design/service-web-experience-digital-platforms.webp",
+    features: [
+      "Custom Website Design",
+      "Corporate Web Portals",
+      "Responsive Development",
+      "High-Fidelity UI/UX Prototypes"
+    ],
     isReversed: true,
   },
   {
-    badge: "GROWTH PIPELINES",
-    title: "Digital Strategy & Performance Marketing",
-    description: "Connect with the right audience using dynamic, conversion-focused strategy. We plan campaigns across search networks, social platforms, and media sites, designing high-impact ad banners, and providing live tracking dashboards.",
-    image: "/images/services/digital-marketing/service-digital-marketing-strategy.webp",
-    features: ["Ad Creative Layouts", "Conversion Tracking", "A/B Audience Splits", "Performance Reports"],
+    badge: "DIGITAL GROWTH",
+    title: "Growth Marketing & Performance",
+    description: "Drive measurable business growth through strategic digital marketing. We create high-converting campaigns, optimize customer journeys, and provide performance insights that help brands reach the right audience and maximize return on investment.",
+    image: "/images/services/digital-marketing/growth-marketing-performance.webp",
+    features: [
+      "Paid Advertising Creatives",
+      "Conversion Tracking",
+      "A/B Campaign Testing",
+      "Performance Analytics & Reporting"
+    ],
     isReversed: false,
   },
+  {
+    badge: "ACADEMIC TECHNOLOGY",
+    title: "Academic Software Development & Mentoring",
+    description: "Support software engineering and technology projects with professional guidance from planning to implementation. We help students and aspiring developers build high-quality software, strengthen technical skills, and deliver polished project outcomes through structured mentoring and development support.",
+    image: "/images/services/academic/academic-software-development-mentoring.webp",
+    features: [
+      "Software Engineering Projects",
+      "AI & Machine Learning Solutions",
+      "Web & Mobile Application Development",
+      "Database Design & Implementation",
+      "UI/UX Prototyping",
+      "Technical Documentation",
+      "Code Review & Debugging",
+      "Project Consultation & Mentoring"
+    ],
+    isReversed: true,
+  }
 ];
 
 export default function ServicesClient() {
@@ -55,14 +88,14 @@ export default function ServicesClient() {
               variant="secondary"
               className="w-fit px-3.5 py-1.5 text-xs font-semibold rounded-full border border-white/10 bg-[#11161C]/50 text-[#16C7FF] backdrop-blur-md tracking-wider uppercase shadow-[0_0_15px_rgba(22,199,255,0.05)]"
             >
-              Our Solutions
+              OUR EXPERTISE
             </Badge>
             <Heading level="h1" className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white border-none pb-0">
-              Creative Solutions <br />
-              <span className="text-[#16C7FF] bg-clip-text bg-gradient-to-r from-[#16C7FF] to-blue-500">Engineered for Success.</span>
+              Digital Solutions <br />
+              <span className="text-[#16C7FF] bg-clip-text bg-gradient-to-r from-[#16C7FF] to-blue-500">Built for Modern Businesses.</span>
             </Heading>
             <Text className="text-white/70 text-lg sm:text-xl leading-relaxed max-w-3xl font-normal">
-              We offer end-to-end design, branding, and development services built around modern web architectures and premium aesthetic systems.
+              We design brands, build digital experiences, develop software, and create intelligent solutions that help businesses and professionals grow with confidence.
             </Text>
           </div>
         </Container>
@@ -155,10 +188,10 @@ export default function ServicesClient() {
                   READY TO ENGAGE?
                 </Badge>
                 <Heading level="h2" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white border-none pb-0 leading-tight">
-                  Let&apos;s Build a Dynamic Strategy
+                  Ready to Build Something Exceptional?
                 </Heading>
                 <Text className="max-w-2xl text-white/70 text-base sm:text-lg leading-relaxed font-normal">
-                  Our team is ready to analyze your brand position and implement custom design and tech pipelines that convert.
+                  Whether you&apos;re launching a new brand, building a digital platform, growing your business, or developing an innovative software solution, BrandHive Studio is ready to bring your vision to life.
                 </Text>
               </div>
 

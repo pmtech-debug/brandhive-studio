@@ -10,9 +10,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 
 const services = [
   {
-    title: "Brand Identity",
-    description: "We craft unique brand identities that define your vision, values and make a lasting impression.",
-    tags: ["Guidelines", "Typography", "Strategy"],
+    title: "Brand Strategy",
+    description: "Build strong business foundations through positioning, audience research, messaging, and long-term brand planning.",
+    tags: ["Positioning", "Research", "Strategy"],
     icon: (
       <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11a13.917 13.917 0 00-2.333-7.352M3 13a9 9 0 0115 0H3z" />
@@ -20,9 +20,9 @@ const services = [
     ),
   },
   {
-    title: "Logo Design",
-    description: "Timeless logos that communicate your brand essence and leave a strong visual impact.",
-    tags: ["Vector Marks", "Scalable Marks", "Symbols"],
+    title: "Brand Identity",
+    description: "Create memorable visual identities including logos, typography, color systems, and comprehensive brand guidelines.",
+    tags: ["Logo Systems", "Visual Identity", "Guidelines"],
     icon: (
       <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -30,9 +30,19 @@ const services = [
     ),
   },
   {
-    title: "Graphic Design",
-    description: "Print and digital designs that captivate your audience and strengthen your brand presence.",
-    tags: ["Print Layouts", "Illustrations", "Collateral"],
+    title: "Website Design & Development",
+    description: "Design and develop premium, responsive websites focused on performance, usability, SEO, and conversion.",
+    tags: ["Next.js", "Responsive", "Performance"],
+    icon: (
+      <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    title: "UI / UX Design",
+    description: "Design intuitive digital experiences with user-centered interfaces, wireframes, prototypes, and scalable design systems.",
+    tags: ["UX Research", "Wireframes", "Prototyping"],
     icon: (
       <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -40,19 +50,9 @@ const services = [
     ),
   },
   {
-    title: "Social Media Marketing",
-    description: "Grow your brand online with engaging content, strategies and community management.",
-    tags: ["Copywriting", "Grid Planning", "Assets"],
-    icon: (
-      <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Meta Advertising",
-    description: "Targeted ad campaigns on Facebook & Instagram that bring leads, conversions and growth.",
-    tags: ["Lead Campaigns", "Pixel Setup", "Reports"],
+    title: "Growth Marketing",
+    description: "Accelerate business growth through SEO, paid advertising, analytics, conversion optimization, and digital strategy.",
+    tags: ["SEO", "Paid Ads", "Analytics"],
     icon: (
       <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
@@ -60,12 +60,12 @@ const services = [
     ),
   },
   {
-    title: "Website Creation",
-    description: "Modern, responsive websites designed to convert visitors into loyal customers.",
-    tags: ["Next.js React", "Tailwind CSS", "SEO Specs"],
+    title: "Software Development",
+    description: "Develop custom web applications, business systems, automation platforms, and intelligent digital solutions.",
+    tags: ["Web Apps", "Automation", "Business Systems"],
     icon: (
       <svg className="size-6 text-[#16C7FF] transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
   },
@@ -136,7 +136,7 @@ export default function Services() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8"
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={cardVariants} className="h-full">
+            <motion.div key={index} variants={cardVariants} style={{ willChange: "transform, opacity" }} className="h-full">
               <Link href="/services" className="group block h-full focus-visible:outline-none" data-cursor-label="DISCOVER">
                   <Card className="reflection-sweep breathing-card relative flex flex-col h-full p-8 sm:p-10 rounded-3xl border border-white/10 bg-[#11161C]/55 hover:bg-[#161f28]/70 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:border-[#16C7FF]/35 hover:shadow-[0_20px_45px_rgba(22,199,255,0.1),0_0_25px_rgba(22,199,255,0.03)] hover:-translate-y-2 transition-all duration-350 ease-out">
                     

@@ -80,7 +80,7 @@ export default function Heading({
           className="inline-block"
         >
           {words.map((word, idx) => (
-            <motion.span key={idx} variants={child} className="inline-block mr-[0.22em] last:mr-0">
+            <motion.span key={idx} variants={child} className="inline-block mr-[0.22em] last:mr-0" style={{ willChange: "transform, opacity, filter" }}>
               {word}
             </motion.span>
           ))}
