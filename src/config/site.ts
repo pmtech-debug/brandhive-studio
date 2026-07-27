@@ -1,8 +1,14 @@
 export const siteConfig = {
   name: "BrandHive Studio",
+  alternateNames: [
+    "Brand Hive Studio",
+    "BrandHiveStudio",
+    "BrandHive",
+    "Brand Hive"
+  ],
   tagline: "Premium Branding & Web Design Agency",
-  description: "We design premium brands, websites, and digital experiences that help businesses grow with confidence.",
-  url: "https://brandhivestudio.com", // Placeholder URL
+  description: "BrandHive Studio is a premium creative design and web development agency.",
+  url: "https://brandhivestudio.com.lk",
   metadata: {
     defaultTitle: "BrandHive Studio | Premium Branding & Web Design Agency",
     titleTemplate: "%s | BrandHive Studio",

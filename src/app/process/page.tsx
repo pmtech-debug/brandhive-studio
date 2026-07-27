@@ -4,6 +4,14 @@ import ProcessClient from "./ProcessClient";
 export const metadata: Metadata = {
   title: "Our Process | BrandHive Studio",
   description: "Learn more about our systematic branding, design, and development process. From initial discovery to deployment, we engineer visually premium and fast web products.",
+  keywords: [
+    "BrandHive Studio",
+    "Brand Hive Studio",
+    "BrandHive",
+    "Brand Hive",
+    "BrandHive Studio Process",
+    "design process"
+  ],
   alternates: { canonical: "https://brandhivestudio.com.lk/process" },
   openGraph: {
     title: "Our Process | BrandHive Studio",

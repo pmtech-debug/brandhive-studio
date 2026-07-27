@@ -33,6 +33,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: "#050608",
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
@@ -45,8 +46,38 @@ export const metadata: Metadata = {
     template: "%s | BrandHive Studio"
   },
   description: "A premium creative design and development agency. We engineer custom brand identities, luxury packaging design, and high-performance React web applications.",
-  keywords: ["branding", "web design", "web development", "UI/UX design", "logo design", "creative agency", "performance web development"],
-  manifest: "/favicon/site.webmanifest",
+  keywords: [
+    "BrandHive Studio",
+    "Brand Hive Studio",
+    "BrandHiveStudio",
+    "BrandHive",
+    "Brand Hive",
+    "branding agency Sri Lanka",
+    "web design agency",
+    "web development",
+    "UI/UX design",
+    "logo design",
+    "creative agency",
+    "performance web development",
+    "luxury packaging design",
+    "brand strategy"
+  ],
+  authors: [{ name: "BrandHive Studio", url: "https://brandhivestudio.com.lk" }],
+  creator: "BrandHive Studio",
+  publisher: "BrandHive Studio",
+  applicationName: "BrandHive Studio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "BrandHive Studio | Premium Branding & Web Design Agency",
     description: "A premium creative design and development agency. We engineer custom brand identities, luxury packaging design, and high-performance web products.",
@@ -68,13 +99,17 @@ export const metadata: Metadata = {
     title: "BrandHive Studio | Premium Branding & Web Design Agency",
     description: "A premium creative design and development agency. We engineer custom brand identities, luxury packaging design, and high-performance web products.",
     images: ["https://brandhivestudio.com.lk/og-image.png"],
+    creator: "@BrandHiveStudio",
   },
   icons: {
     icon: [
+      { url: "/favicon.ico" },
       { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon/favicon.ico" }
+      { url: "/favicon/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon/android-chrome-512x512.png", sizes: "512x512", type: "image/png" }
     ],
+    shortcut: "/favicon.ico",
     apple: [
       { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
     ],
@@ -88,40 +123,91 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "BrandHive Studio",
-    "image": "https://brandhivestudio.com.lk/favicon/brandhive-logo-master.png",
-    "@id": "https://brandhivestudio.com.lk/#website",
-    "url": "https://brandhivestudio.com.lk",
-    "telephone": "+94706410093",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Colombo",
-      "addressRegion": "Western Province",
-      "addressCountry": "LK"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 6.9271,
-      "longitude": 79.8612
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
-    },
-    "sameAs": [
-      "https://wa.me/94706410093",
-      "https://brandhivestudio.com.lk"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://brandhivestudio.com.lk/#website",
+        "url": "https://brandhivestudio.com.lk",
+        "name": "BrandHive Studio",
+        "alternateName": [
+          "Brand Hive Studio",
+          "BrandHiveStudio",
+          "BrandHive",
+          "Brand Hive"
+        ],
+        "description": "A premium creative design and development agency.",
+        "publisher": {
+          "@id": "https://brandhivestudio.com.lk/#organization"
+        }
+      },
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://brandhivestudio.com.lk/#organization",
+        "name": "BrandHive Studio",
+        "alternateName": [
+          "Brand Hive Studio",
+          "BrandHiveStudio",
+          "BrandHive",
+          "Brand Hive"
+        ],
+        "url": "https://brandhivestudio.com.lk",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://brandhivestudio.com.lk/favicon/brandhive-logo-master.png"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://brandhivestudio.com.lk/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "telephone": "+94706410093",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Colombo",
+          "addressRegion": "Western Province",
+          "addressCountry": "LK"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 6.9271,
+          "longitude": 79.8612
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://wa.me/94706410093",
+          "https://brandhivestudio.com.lk"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://brandhivestudio.com.lk/#webpage",
+        "url": "https://brandhivestudio.com.lk",
+        "name": "BrandHive Studio | Premium Branding & Web Design Agency",
+        "description": "A premium creative design and development agency. We engineer custom brand identities, luxury packaging design, and high-performance React web applications.",
+        "isPartOf": {
+          "@id": "https://brandhivestudio.com.lk/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://brandhivestudio.com.lk/og-image.png",
+          "width": 1200,
+          "height": 630
+        }
+      }
     ]
   };
 

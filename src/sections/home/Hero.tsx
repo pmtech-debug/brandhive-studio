@@ -429,6 +429,7 @@ export default function Hero() {
 
             {/* 2. iPhone Phone Mockup (bottom-right overlap) */}
             <motion.div
+              data-nosnippet
               initial={{ opacity: 1, scale: 0.88, y: 16 }}
               animate={{
                 opacity: 1,

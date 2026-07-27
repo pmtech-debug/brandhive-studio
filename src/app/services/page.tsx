@@ -4,6 +4,15 @@ import ServicesClient from "./ServicesClient";
 export const metadata: Metadata = {
   title: "Our Services | BrandHive Studio",
   description: "Bespoke digital services including brand strategy, luxury logo design, fast web development, and performance marketing designed to scale modern businesses.",
+  keywords: [
+    "BrandHive Studio",
+    "Brand Hive Studio",
+    "BrandHive",
+    "Brand Hive",
+    "BrandHive Studio Services",
+    "branding services",
+    "web development agency"
+  ],
   alternates: { canonical: "https://brandhivestudio.com.lk/services" },
   openGraph: {
     title: "Our Services | BrandHive Studio",

@@ -4,6 +4,15 @@ import InsightsClient from "./InsightsClient";
 export const metadata: Metadata = {
   title: "Insights & Perspectives | BrandHive Studio",
   description: "Read the latest design guides, branding strategies, and technical insights from BrandHive Studio's specialists. Learn how to optimize UX and scale your brand.",
+  keywords: [
+    "BrandHive Studio",
+    "Brand Hive Studio",
+    "BrandHive",
+    "Brand Hive",
+    "BrandHive Studio Insights",
+    "branding blog",
+    "design insights"
+  ],
   alternates: { canonical: "https://brandhivestudio.com.lk/insights" },
   openGraph: {
     title: "Insights & Perspectives | BrandHive Studio",

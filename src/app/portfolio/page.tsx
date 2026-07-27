@@ -4,6 +4,15 @@ import PortfolioClient from "./PortfolioClient";
 export const metadata: Metadata = {
   title: "Our Work & Case Studies | BrandHive Studio",
   description: "Explore the BrandHive Studio design and development portfolio. Read our featured case studies detailing custom corporate identities, luxury packaging design, and modern web engineering.",
+  keywords: [
+    "BrandHive Studio",
+    "Brand Hive Studio",
+    "BrandHive",
+    "Brand Hive",
+    "BrandHive Studio Portfolio",
+    "case studies",
+    "branding portfolio"
+  ],
   alternates: { canonical: "https://brandhivestudio.com.lk/portfolio" },
   openGraph: {
     title: "Our Work & Case Studies | BrandHive Studio",
