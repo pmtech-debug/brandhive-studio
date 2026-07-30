@@ -189,6 +189,9 @@ export default function RootLayout({
         },
         "sameAs": [
           "https://wa.me/94706410093",
+          "https://www.facebook.com/brandhivestudiolk",
+          "https://www.instagram.com/brandhivestudiolk",
+          "https://www.tiktok.com/@brandhivestudiolk",
           "https://brandhivestudio.com.lk"
         ]
       },
